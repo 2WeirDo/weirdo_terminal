@@ -4,7 +4,7 @@ import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 
 /**
  * 快捷键命令
- * @author yupi
+ * @author weirdo
  */
 const shortcutCommand: CommandType = {
   func: 'shortcut',
