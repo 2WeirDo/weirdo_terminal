@@ -1,5 +1,6 @@
 import { CommandType } from './command'
-import dateCommand from './commands/date/dateCommand'
+import dateCommand from './commands/basic/dateCommand'
+import gotoCommand from './commands/basic/gotoCommand'
 import baiduCommand from './commands/search/baiduCommand'
 import bingCommand from './commands/search/bingCommand'
 import doubanCommand from './commands/search/doubanCommand'
@@ -10,6 +11,7 @@ import mdnCommand from './commands/search/mdnCommand'
 import StackoverflowCommand from './commands/search/stackoverflowCommand'
 import zhihuCommand from './commands/search/zhihuCommand'
 import shortcutCommand from './commands/terminal/shortcut/shortcutCommand'
+import helpCommand from './commands/terminal/help/helpCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -25,7 +27,9 @@ const commandList: CommandType[] = [
   doubanCommand,
   douyinCommand,
   bingCommand,
-  baiduCommand
+  baiduCommand,
+  gotoCommand,
+  helpCommand
 ]
 
 /**
