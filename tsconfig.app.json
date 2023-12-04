@@ -5,6 +5,7 @@
   "compilerOptions": {
     // "types": ["node"],
     "target": "esnext",
+    "verbatimModuleSyntax": false,
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",

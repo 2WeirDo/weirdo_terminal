@@ -20,7 +20,6 @@
 
 <script setup lang="ts">
 import transferText from '../../utils/transferText'
-// @ts-ignore
 import OutputType = WeirdoTerminal.OutputType
 import { computed, toRefs } from 'vue'
 
