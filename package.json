@@ -15,6 +15,7 @@
     "ant-design-vue": "4.x",
     "axios": "^1.6.2",
     "dayjs": "^1.11.10",
+    "getopts": "^2.3.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.0",
     "vue": "^3.3.4",
