@@ -29,7 +29,7 @@ interface OutputProps {
 
 const props = defineProps<OutputProps>()
 const { output } = toRefs(props) // 注意要响应式地拿到
-console.log('output:', output)
+// console.log('output:', output)
 /**
     status: "success"
     text: "登录成功"

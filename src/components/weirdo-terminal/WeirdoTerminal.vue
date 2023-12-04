@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, Ref, ref, StyleValue, toRefs, watchEffect } from 'vue'
+import { computed, onMounted, ref, StyleValue, toRefs, watchEffect } from 'vue'
 import CommandOutputType = WeirdoTerminal.CommandOutputType
 import OutputType = WeirdoTerminal.OutputType
 import CommandInputType = WeirdoTerminal.CommandInputType
@@ -332,9 +332,12 @@ const focusInput = () => {
  * 获取输入框是否聚焦
  */
 const isInputFocused = () => {
+  // bug
   // 比较这个输入元素input是否和当前获得焦点的元素相等。
-  return (commandInputRef.value.input as HTMLInputElement) == document.activeElement
+  // return (commandInputRef.value.input as HTMLInputElement) == document.activeElement
+  return true
 }
+
 /**
  * 设置输入框的值 (按 tab 键)
  */

@@ -18,11 +18,11 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     storage: window.localStorage, // 将数据持久化到的 storage 中
     beforeRestore: (context) => {
       //将在从 storage 中恢复数据之前触发
-      console.log('load terminalConfigStore data start')
+      // console.log('load terminalConfigStore data start')
     },
     afterRestore: (context) => {
       // 将在从 storage 中恢复数据之后触发
-      console.log('load terminalConfigStore data end')
+      // console.log('load terminalConfigStore data end')
     }
   },
   actions: {

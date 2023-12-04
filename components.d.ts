@@ -7,11 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ACol: typeof import('ant-design-vue/es')['Col']
     ACollapse: typeof import('ant-design-vue/es')['Collapse']
     ACollapsePanel: typeof import('ant-design-vue/es')['CollapsePanel']
     AInput: typeof import('ant-design-vue/es')['Input']
+    ARow: typeof import('ant-design-vue/es')['Row']
     ATag: typeof import('ant-design-vue/es')['Tag']
     ContentOutput: typeof import('./src/components/weirdo-terminal/ContentOutput.vue')['default']
+    copy: typeof import('./src/components/weirdo-terminal/WeirdoTerminal copy.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     WeirdoTerminal: typeof import('./src/components/weirdo-terminal/WeirdoTerminal.vue')['default']

@@ -10,7 +10,7 @@ import TerminalType = WeirdoTerminal.TerminalType
  */
 export const registerShortcuts = (terminal: TerminalType) => {
   document.onkeydown = (e) => {
-    // console.log(e);
+    // console.log(e)
     let key = e.key
 
     // 自动聚焦输入框
@@ -35,6 +35,7 @@ export const registerShortcuts = (terminal: TerminalType) => {
         e.metaKey == !!shortcut.metaKey &&
         e.shiftKey == !!shortcut.shiftKey
       ) {
+        // console.log('code', shortcut)
         shortcut.action(e, terminal)
       }
     }

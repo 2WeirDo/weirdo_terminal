@@ -1,9 +1,11 @@
 import { CommandType } from './command'
+import dateCommand from './commands/date/dateCommand'
+import shortcutCommand from './commands/terminal/shortcut/shortcutCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
  */
-const commandList: CommandType[] = []
+const commandList: CommandType[] = [dateCommand, shortcutCommand]
 
 /**
  * 命令字典
