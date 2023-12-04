@@ -210,7 +210,7 @@ watchEffect(() => {
  */
 // todo
 const prompt = computed(() => {
-  return 'nihao'
+  return '[weirdo]$'
 })
 
 /**
@@ -332,10 +332,8 @@ const focusInput = () => {
  * 获取输入框是否聚焦
  */
 const isInputFocused = () => {
-  // bug
   // 比较这个输入元素input是否和当前获得焦点的元素相等。
-  // return (commandInputRef.value.input as HTMLInputElement) == document.activeElement
-  return true
+  return (commandInputRef.value.input as HTMLInputElement) == document.activeElement
 }
 
 /**
@@ -433,7 +431,7 @@ defineExpose({
 
 .weirdo_terminal {
   background: rgba(0, 0, 0, 0.6);
-  padding: 35px;
+  padding: 20px;
   overflow: scroll;
 }
 

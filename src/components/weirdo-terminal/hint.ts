@@ -6,7 +6,7 @@ import { useTerminalConfigStore } from '../../stores/terminalConfigStore'
 
 /**
  * 命令提示功能
- * @author yupi
+ * @author weirdo
  */
 const useHint = () => {
   const hint = ref('')

@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "ant-design-vue": "4.x",
+    "ant-design-vue": "^3.2.10",
     "axios": "^1.6.2",
     "dayjs": "^1.11.10",
     "getopts": "^2.3.0",
