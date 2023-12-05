@@ -2,7 +2,7 @@ import { CommandType } from '../../command'
 
 /**
  * 跳转命令
- * @author yupi
+ * @author weirdo
  */
 export default {
   func: 'goto',

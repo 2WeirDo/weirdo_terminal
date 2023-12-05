@@ -4,7 +4,7 @@ import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 
 /**
  * ikun 命令（整活）
- * @author yupi
+ * @author weirdo
  */
 const ikunCommand: CommandType = {
   func: 'ikun',

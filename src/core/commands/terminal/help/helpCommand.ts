@@ -5,7 +5,7 @@ import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 
 /**
  * 帮助命令
- * @author yupi
+ * @author weirdo
  */
 const helpCommand: CommandType = {
   func: 'help',

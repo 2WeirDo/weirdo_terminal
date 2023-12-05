@@ -2,7 +2,7 @@ import { CommandType } from '../../command'
 
 /**
  * 掘金搜索命令
- * @author yupi
+ * @author weirdo
  */
 const StackoverflowCommand: CommandType = {
   func: 'stackoverflow',
