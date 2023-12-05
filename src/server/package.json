@@ -11,12 +11,16 @@
   "dependencies": {
     "sequelize": "^6.21.3",
     "express": "^4.17.2",
+    "body-parser": "^1.19.0",
+    "axios": "^0.27.2",
+    "md5": "^2.3.0",
     "express-session": "^1.17.2",
     "redis": "^3.0.2",
     "connect-redis": "^6.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "typescript": "^4.4.2"
   },
   "author": "weirdo",
   "license": "ISC"
