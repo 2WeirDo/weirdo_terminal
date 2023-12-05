@@ -12,6 +12,10 @@ import StackoverflowCommand from './commands/search/stackoverflowCommand'
 import zhihuCommand from './commands/search/zhihuCommand'
 import shortcutCommand from './commands/terminal/shortcut/shortcutCommand'
 import helpCommand from './commands/terminal/help/helpCommand'
+import clearCommand from './commands/terminal/shortcut/clearCommand'
+import ikunCommand from './commands/relax/ikun/ikunCommand'
+
+
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -29,7 +33,9 @@ const commandList: CommandType[] = [
   bingCommand,
   baiduCommand,
   gotoCommand,
-  helpCommand
+  helpCommand,
+  clearCommand,
+  ikunCommand
 ]
 
 /**
