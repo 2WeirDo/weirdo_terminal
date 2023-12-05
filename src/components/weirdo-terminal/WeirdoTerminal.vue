@@ -210,7 +210,7 @@ watchEffect(() => {
  */
 // todo
 const prompt = computed(() => {
-  return '[weirdo]$'
+  return `[${user.value?.username}]$`
 })
 
 /**
@@ -399,7 +399,8 @@ onMounted(() => {
     terminal.writeTextOutput(
       `Welcome to Weirdo_Terminal!` +
         `<a href="//github.com/2WeirDo/weirdo_terminal" target='_blank'> GitHub Open Source</a>` +
-        ' ~~~~~~~~ ' + `Author :  <a href="//2weirdo.github.io/about/" target="_blank">weirdo</a>`
+        ' ~~~~~~~~ ' +
+        `Author :  <a href="//2weirdo.github.io/about/" target="_blank">weirdo</a>`
     )
 
     terminal.writeTextOutput(`please input 'help' to enjoy~ 💆‍`)

@@ -23,7 +23,7 @@ import historyCommand from './commands/terminal/history/historyCommand'
 import hintCommand from './commands/terminal/hint/hintCommand'
 import resetCommand from './commands/terminal/reset/resetCommand'
 import welcomeCommand from './commands/terminal/welcome/welcomeCommand'
-
+import userCommands from './commands/user/userCommands'
 
 
 /**
@@ -53,7 +53,8 @@ const commandList: CommandType[] = [
   historyCommand,
   hintCommand,
   resetCommand,
-  welcomeCommand
+  welcomeCommand,
+  userCommands
 ]
 
 /**
