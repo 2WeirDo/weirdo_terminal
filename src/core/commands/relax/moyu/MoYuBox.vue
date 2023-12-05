@@ -25,8 +25,8 @@ const currentGame = gameList[Math.floor(Math.random() * gameList.length)]
 
 <style scoped>
 .main {
-  width: 100%;
-  height: 80vh;
+  width: 80%;
+  height: 60vh;
   min-height: 600px;
 }
 </style>

@@ -429,7 +429,8 @@ defineExpose({
 }
 
 .weirdo_terminal {
-  background: rgba(100, 96, 96, 0.6);
+  /* background: rgba(100, 96, 96, 0.6); */
+  background-image: linear-gradient(to top, #4e435c 0%, #313838 100%);
   padding: 20px;
   overflow: scroll;
 }

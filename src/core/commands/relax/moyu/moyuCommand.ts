@@ -14,6 +14,7 @@ const moyuCommand: CommandType = {
   action(options, terminal) {
     const output: ComponentOutputType = {
       type: 'component',
+      // @ts-ignore
       component: defineAsyncComponent(() => import('./MoYuBox.vue')),
       props: {}
     }
