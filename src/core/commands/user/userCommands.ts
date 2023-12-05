@@ -11,7 +11,8 @@ import logoutCommand from './subCommands/logoutCommand'
  */
 const userCommand: CommandType = {
   func: 'user',
-  name: '用户',
+  name: '用户相关指令',
+  desc: 'register / login / logout',
   alias: [],
   params: [
     {

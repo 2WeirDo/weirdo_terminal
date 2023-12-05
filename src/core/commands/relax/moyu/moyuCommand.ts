@@ -9,6 +9,7 @@ import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 const moyuCommand: CommandType = {
   func: 'moyu',
   name: '摸鱼',
+  desc: '一些小游戏',
   options: [],
   collapsible: true,
   action(options, terminal) {

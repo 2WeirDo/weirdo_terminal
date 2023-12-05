@@ -25,8 +25,8 @@ import resetCommand from './commands/terminal/reset/resetCommand'
 import welcomeCommand from './commands/terminal/welcome/welcomeCommand'
 import userCommands from './commands/user/userCommands'
 import fanyiCommand from './commands/api/fanyi/fanyiCommand'
-
-
+import juejinCommand from './commands/search/juejinCommand'
+import csdnCommand from './commands/search/csdnCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -57,7 +57,9 @@ const commandList: CommandType[] = [
   resetCommand,
   welcomeCommand,
   userCommands,
-  fanyiCommand
+  fanyiCommand,
+  juejinCommand,
+  csdnCommand
 ]
 
 /**
