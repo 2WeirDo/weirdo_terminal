@@ -15,7 +15,7 @@ import helpCommand from './commands/terminal/help/helpCommand'
 import clearCommand from './commands/terminal/shortcut/clearCommand'
 import ikunCommand from './commands/relax/ikun/ikunCommand'
 import todoCommand from './commands/relax/todo/todoCommand'
-
+import copyCommand from './commands/basic/copyCommand'
 
 
 /**
@@ -37,7 +37,8 @@ const commandList: CommandType[] = [
   helpCommand,
   clearCommand,
   ikunCommand,
-  todoCommand
+  todoCommand,
+  copyCommand
 ]
 
 /**
