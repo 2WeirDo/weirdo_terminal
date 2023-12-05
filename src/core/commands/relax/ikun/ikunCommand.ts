@@ -8,7 +8,7 @@ import ComponentOutputType = WeirdoTerminal.ComponentOutputType
  */
 const ikunCommand: CommandType = {
   func: 'ikun',
-  name: 'ikun',
+  name: '测试你是不是小黑子🐔',
   options: [],
   collapsible: true,
   action(options, terminal) {

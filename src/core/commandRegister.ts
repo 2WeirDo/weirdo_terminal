@@ -17,7 +17,8 @@ import ikunCommand from './commands/relax/ikun/ikunCommand'
 import todoCommand from './commands/relax/todo/todoCommand'
 import copyCommand from './commands/basic/copyCommand'
 import moyuCommand from './commands/relax/moyu/moyuCommand'
-
+import bilibiliCommand from './commands/search/bilibiliCommand'
+import youtubeCommand from './commands/search/youtubeCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -40,7 +41,9 @@ const commandList: CommandType[] = [
   ikunCommand,
   todoCommand,
   copyCommand,
-  moyuCommand
+  moyuCommand,
+  bilibiliCommand,
+  youtubeCommand
 ]
 
 /**
