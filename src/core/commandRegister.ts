@@ -19,6 +19,12 @@ import copyCommand from './commands/basic/copyCommand'
 import moyuCommand from './commands/relax/moyu/moyuCommand'
 import bilibiliCommand from './commands/search/bilibiliCommand'
 import youtubeCommand from './commands/search/youtubeCommand'
+import historyCommand from './commands/terminal/history/historyCommand'
+import hintCommand from './commands/terminal/hint/hintCommand'
+import resetCommand from './commands/terminal/reset/resetCommand'
+import welcomeCommand from './commands/terminal/welcome/welcomeCommand'
+
+
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -43,7 +49,11 @@ const commandList: CommandType[] = [
   copyCommand,
   moyuCommand,
   bilibiliCommand,
-  youtubeCommand
+  youtubeCommand,
+  historyCommand,
+  hintCommand,
+  resetCommand,
+  welcomeCommand
 ]
 
 /**
