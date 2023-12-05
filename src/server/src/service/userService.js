@@ -1,4 +1,4 @@
-const MyError = require('../exception')
+const MyError = require('../exception/index')
 const { Op } = require('sequelize')
 // where 子句有很多运算符,可以从 Op 中以 Symbols 的形式使用.
 

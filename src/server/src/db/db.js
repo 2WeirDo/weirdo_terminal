@@ -3,7 +3,7 @@
  */
 
 const { Sequelize } = require("sequelize");
-const { dbConfig } = require("./config/getConfig");
+const { dbConfig } = require("../config/getConfig");
 
 /**
  * 创建数据库实例

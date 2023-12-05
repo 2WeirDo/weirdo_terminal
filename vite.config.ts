@@ -17,5 +17,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  // bug: 前端无法识别process.env
+  define: {
+    'process.env': process.env
   }
 })
