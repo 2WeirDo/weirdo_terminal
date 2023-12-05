@@ -397,13 +397,12 @@ onMounted(() => {
     })
   } else {
     terminal.writeTextOutput(
-      `Welcome to Weirdo_Terminal, coolest browser index for geeks!` +
-        `<a href="//github.com/2WeirDo/weirdo_terminal" target='_blank'> GitHub Open Source</a>`
+      `Welcome to Weirdo_Terminal!` +
+        `<a href="//github.com/2WeirDo/weirdo_terminal" target='_blank'> GitHub Open Source</a>` +
+        ' ~~~~~~~~ ' + `Author :  <a href="//2weirdo.github.io/about/" target="_blank">weirdo</a>`
     )
-    terminal.writeTextOutput(
-      `Author <a href="//2weirdo.github.io/about/" target="_blank">coder_weirdo</a>` +
-        `: please input 'help' to enjoy`
-    )
+
+    terminal.writeTextOutput(`please input 'help' to enjoy~ 💆‍`)
     terminal.writeTextOutput('<br/>')
   }
 })

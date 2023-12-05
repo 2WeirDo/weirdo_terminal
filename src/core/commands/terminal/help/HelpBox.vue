@@ -9,6 +9,8 @@
         <a-col>{{ command.desc }}</a-col>
       </a-row>
     </div>
+    <br>
+    <p>输入过程中会出现命令提示, 按下 Tab 键可以进行命令补全哦, 触发回车即可触发命令 ~~</p>
   </div>
 </template>
 
