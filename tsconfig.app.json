@@ -3,7 +3,7 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
-    // "types": ["node"],
+    "types": ["node"],
     "target": "esnext",
     "verbatimModuleSyntax": false,
     "useDefineForClassFields": true,
