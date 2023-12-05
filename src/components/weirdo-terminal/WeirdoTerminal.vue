@@ -266,6 +266,10 @@ const writeTextResult = (text: string, status?: OutputStatusType) => {
     status
   }
   currentNewCommand.resultList.push(newOutput)
+  // bug
+  setTimeout(() => {
+      terminal.focusInput()
+    }, 0)
 }
 
 /**

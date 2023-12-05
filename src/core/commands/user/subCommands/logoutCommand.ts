@@ -20,9 +20,6 @@ const logoutCommand: CommandType = {
     } else {
       terminal.writeTextErrorResult(res?.message ?? '注销失败')
     }
-    setTimeout(() => {
-      terminal.focusInput()
-    }, 0)
   }
 }
 

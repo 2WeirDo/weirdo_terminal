@@ -43,10 +43,6 @@ const loginCommand: CommandType = {
     } else {
       terminal.writeTextErrorResult(res?.message ?? '登录失败')
     }
-    // bug
-    setTimeout(() => {
-      terminal.focusInput()
-    }, 0)
   }
 }
 
