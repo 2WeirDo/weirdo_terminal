@@ -1,5 +1,5 @@
 import { CommandType } from '../../../command'
-import { userRegister } from '../../api/userApi'
+import { userRegister } from '../userApi'
 
 /**
  * 用户注册命令

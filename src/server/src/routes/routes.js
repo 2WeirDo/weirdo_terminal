@@ -18,6 +18,10 @@ let routes = [
   {
     path: '/user/current',
     handler: require('../controller/userController.js').getLoginUserApi
+  },
+  {
+    path: '/fanyi/translate',
+    handler: require('../controller/fanyiController.js').translateApi
   }
 ]
 

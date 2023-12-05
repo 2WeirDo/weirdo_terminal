@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getLoginUser } from '../core/commands/api/userApi'
+import { getLoginUser } from '../core/commands/user/userApi'
 import { LOCAL_USER } from '../core/commands/user/userConstant'
 import UserType = User.UserType
 

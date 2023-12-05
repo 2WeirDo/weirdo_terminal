@@ -96,7 +96,7 @@ class ExpressServer {
         return FORBIDDEN_ERROR_CODE
       }
       let result
-      const event = req.body;
+      const event = req.body
       try {
         result = await handlerFunction(event, req, res)
         result = {

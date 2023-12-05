@@ -24,6 +24,8 @@ import hintCommand from './commands/terminal/hint/hintCommand'
 import resetCommand from './commands/terminal/reset/resetCommand'
 import welcomeCommand from './commands/terminal/welcome/welcomeCommand'
 import userCommands from './commands/user/userCommands'
+import fanyiCommand from './commands/api/fanyi/fanyiCommand'
+
 
 
 /**
@@ -54,7 +56,8 @@ const commandList: CommandType[] = [
   hintCommand,
   resetCommand,
   welcomeCommand,
-  userCommands
+  userCommands,
+  fanyiCommand
 ]
 
 /**
