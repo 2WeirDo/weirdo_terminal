@@ -217,12 +217,14 @@ const prompt = computed(() => {
  * 终端主样式
  */
 const mainStyle = computed(() => {
+  // const { backColor } = configStore
   const fullScreenStyle: StyleValue = {
     position: 'fixed',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0
+    // background: `${backColor}`
   }
   return props.fullScreen
     ? fullScreenStyle
@@ -247,6 +249,14 @@ const wrapperStyle = computed(() => {
   return style
 })
 
+// const fontStyle = computed(() => {
+//   const { font } = configStore
+//   const fStyle: StyleValue = {
+//     color: `${font}`
+//   }
+//   return fStyle
+// })
+
 /**
  * 清空所有输出
  */
@@ -268,8 +278,8 @@ const writeTextResult = (text: string, status?: OutputStatusType) => {
   currentNewCommand.resultList.push(newOutput)
   // bug
   setTimeout(() => {
-      terminal.focusInput()
-    }, 0)
+    terminal.focusInput()
+  }, 0)
 }
 
 /**
@@ -434,8 +444,9 @@ defineExpose({
 }
 
 .weirdo_terminal {
-  /* background: rgba(100, 96, 96, 0.6); */
-  background-image: linear-gradient(to top, #4e435c 0%, #313838 100%);
+  background: rgba(0, 0, 0, 0.6);
+  /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
+  /* background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); */
   padding: 20px;
   overflow: scroll;
 }

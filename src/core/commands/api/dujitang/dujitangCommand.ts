@@ -2,10 +2,10 @@ import { CommandType } from '../../../command'
 import myAxios from '../../../../plugins/myAxios'
 
 /**
- * 切换终端背景
- * @author yupi
+ * 来毒鸡汤看看
+ * @author weirdo
  */
-const backgroundCommand: CommandType = {
+const dujitangCommand: CommandType = {
   func: 'dujitang',
   name: '毒鸡汤',
   options: [],
@@ -16,4 +16,4 @@ const backgroundCommand: CommandType = {
   }
 }
 
-export default backgroundCommand
+export default dujitangCommand

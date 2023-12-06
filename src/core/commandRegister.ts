@@ -30,6 +30,8 @@ import csdnCommand from './commands/search/csdnCommand'
 import musicCommand from './commands/api/music/musicCommand'
 import weatherCommand from './commands/basic/weather/weatherCommand'
 import dujitangCommand from './commands/api/dujitang/dujitangCommand'
+import backColorCommand from './commands/basic/backColorCommand'
+import backgroundCommand from './commands/api/background/backgroundCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -65,7 +67,9 @@ const commandList: CommandType[] = [
   csdnCommand,
   musicCommand,
   weatherCommand,
-  dujitangCommand
+  dujitangCommand,
+  backColorCommand,
+  backgroundCommand
 ]
 
 /**

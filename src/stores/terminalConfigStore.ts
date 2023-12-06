@@ -7,7 +7,8 @@ import { defineStore } from 'pinia'
  */
 export const useTerminalConfigStore = defineStore('terminalConfig', {
   state: () => ({
-    background: 'black', // 背景
+    backColor: 'black', // 背景颜色
+    background: 'black', // 背景图像
     showHint: true, // 输入提示
     welcomeTexts: [] as string[] // 终端欢迎语
   }),
@@ -26,6 +27,10 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     }
   },
   actions: {
+    setBackColor(url: string) {
+      if (!url) return
+      this.backColor = url
+    },
     setBackground(url: string) {
       if (!url) return
       this.background = url

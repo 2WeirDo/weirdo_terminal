@@ -31,6 +31,11 @@ let routes = [
     path: "/dujitang/get/random",
     handler: require("../controller/dujitangController").getRandomDujitangApi,
   },
+  {
+    path: "/background/get/random",
+    handler: require("../controller/backgroundController")
+      .getRandomBackgroundApi,
+  },
 ]
 
 module.exports = routes
