@@ -26,7 +26,11 @@ let routes = [
   {
     path: '/music/get',
     handler: require('../controller/musicController.js').getSingleMusicApi
-  }
+  },
+  {
+    path: "/dujitang/get/random",
+    handler: require("../controller/dujitangController").getRandomDujitangApi,
+  },
 ]
 
 module.exports = routes
