@@ -30,7 +30,7 @@ myAxios.interceptors.request.use(
 
 myAxios.interceptors.response.use(
   function (response) {
-    console.log(response);
+    console.log(response.data);
     return response.data;
   },
   function(err) {

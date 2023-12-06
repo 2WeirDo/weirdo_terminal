@@ -27,6 +27,8 @@ import userCommands from './commands/user/userCommands'
 import fanyiCommand from './commands/api/fanyi/fanyiCommand'
 import juejinCommand from './commands/search/juejinCommand'
 import csdnCommand from './commands/search/csdnCommand'
+import musicCommand from './commands/api/music/musicCommand'
+
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -59,7 +61,8 @@ const commandList: CommandType[] = [
   userCommands,
   fanyiCommand,
   juejinCommand,
-  csdnCommand
+  csdnCommand,
+  musicCommand
 ]
 
 /**

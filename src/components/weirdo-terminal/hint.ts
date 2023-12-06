@@ -49,7 +49,7 @@ const useHint = () => {
   // 在 YuTerminal 中通过watchEffect监听输入框内容改变时，触发输入提示
   const debounceSetHint = _.debounce(function (inputText: string) {
     setHint(inputText)
-  }, 250)
+  }, 150)
 
   return {
     hint,

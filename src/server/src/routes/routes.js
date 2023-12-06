@@ -22,6 +22,10 @@ let routes = [
   {
     path: '/fanyi/translate',
     handler: require('../controller/fanyiController.js').translateApi
+  },
+  {
+    path: '/music/get',
+    handler: require('../controller/musicController.js').getSingleMusicApi
   }
 ]
 
