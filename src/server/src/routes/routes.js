@@ -28,14 +28,21 @@ let routes = [
     handler: require('../controller/musicController.js').getSingleMusicApi
   },
   {
-    path: "/dujitang/get/random",
-    handler: require("../controller/dujitangController").getRandomDujitangApi,
+    path: '/dujitang/get/random',
+    handler: require('../controller/dujitangController').getRandomDujitangApi
   },
   {
-    path: "/background/get/random",
-    handler: require("../controller/backgroundController")
-      .getRandomBackgroundApi,
+    path: '/background/get/random',
+    handler: require('../controller/backgroundController').getRandomBackgroundApi
   },
+  {
+    path: '/love/get/random',
+    handler: require('../controller/loveController').getRandomLoveApi
+  },
+  {
+    path: '/hot/get',
+    handler: require('../controller/hotController').getHotApi
+  }
 ]
 
 module.exports = routes

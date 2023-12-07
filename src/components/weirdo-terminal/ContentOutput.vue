@@ -5,7 +5,8 @@
     <template v-if="output.type === 'text'">
       <a-tag v-if="outputTagColor" :color="outputTagColor">{{ output.status }} </a-tag>
       <!-- smartText 用于将 url 变得可以点击(就是换成a标签) -->
-      <span v-if="output.type === 'text'" v-html="transferText(output.text)" />
+      <!-- 这里暂时不需要了, 避免引起冲突 -->
+      <span v-if="output.type === 'text'" v-html="output.text" />
     </template>
     <!-- 如果是组件类型 -->
     <!-- 通过动态组件实现根据输入命令按需加载需要的组件 -->

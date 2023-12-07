@@ -6,7 +6,6 @@
         <text text-anchor="middle" x="50%" y="50%">404</text>
         <text text-anchor="middle" x="49%" y="49%">404</text>
       </symbol>
-
       <g class="g-ants">
         <use xlink:href="#s-text" class="text"></use>
         <use xlink:href="#s-text" class="text"></use>
@@ -16,8 +15,19 @@
       </g>
     </svg>
 
-    <h1>Page Not Found</h1>
-    <a href="./">Back to Home</a>
+    <div class="bottom">
+      <h1
+        style="
+          font-size: 36px;
+          display: inline-block;
+          margin-right: 30px;
+          transform: translateY(7px);
+        "
+      >
+        Page Not Found
+      </h1>
+      <a href="./" class="anniu" style="font-weight: bolder; color: aliceblue">Back to Home</a>
+    </div>
   </div>
   <div class="pyramid-loader pyramid-loader1">
     <div class="wrapper">
@@ -42,6 +52,15 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+.anniu:hover {
+  box-shadow: 0 0 10px 1px white;
+}
+.bottom {
+  position: absolute;
+  left: 47%;
+  transform: translate(-50%);
+  bottom: 25%;
+}
 .pyramid-loader {
   position: absolute;
   width: 300px;
@@ -136,7 +155,7 @@ body {
 svg {
   font: 10.5em 'Monoton';
   width: 100%;
-  height: 86vh;
+  height: 100vh;
 }
 
 .content {

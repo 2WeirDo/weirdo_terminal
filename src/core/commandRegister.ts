@@ -21,6 +21,10 @@ import backColorCommand from './commands/basic/backColorCommand'
 import backgroundCommand from './commands/api/background/backgroundCommand'
 import searchCommands from './commands/search/searchCommands'
 import spaceCommands from './commands/space/spaceCommands'
+import loveCommand from './commands/api/love/loveCommand'
+import hotCommand from './commands/api/hot/hotCommands'
+
+
 
 
 
@@ -50,6 +54,8 @@ const commandList: CommandType[] = [
   dujitangCommand,
   backgroundCommand,
   backColorCommand,
+  loveCommand,
+  hotCommand
 ]
 
 /**
