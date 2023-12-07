@@ -20,12 +20,15 @@ import dujitangCommand from './commands/api/dujitang/dujitangCommand'
 import backColorCommand from './commands/basic/backColorCommand'
 import backgroundCommand from './commands/api/background/backgroundCommand'
 import searchCommands from './commands/search/searchCommands'
+import spaceCommands from './commands/space/spaceCommands'
+
 
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
  */
 const commandList: CommandType[] = [
+  ...spaceCommands,
   ...searchCommands,
   dateCommand,
   shortcutCommand,

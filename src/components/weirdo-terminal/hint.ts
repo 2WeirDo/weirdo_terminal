@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { getUsageStr } from '../../core/commands/terminal/help/helpUtils'
 import { commandMap } from '../../core/commandRegister'
 import _, { trim } from 'lodash'
-import { useTerminalConfigStore } from '../../stores/terminalConfigStore'
+import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
 
 /**
  * 命令提示功能

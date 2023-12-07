@@ -1,6 +1,6 @@
 import { CommandType } from '../../../command'
 import { userLogin, userRegister } from '../userApi'
-import { useUserStore } from '../../../../stores/userStore'
+import { useUserStore } from '@/stores/userStore'
 
 /**
  * 用户登录命令

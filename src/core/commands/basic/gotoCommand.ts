@@ -1,4 +1,5 @@
 import { CommandType } from '../../command'
+import { useSpaceStore } from '@/stores/spaceStore'
 
 /**
  * 跳转命令
@@ -30,9 +31,14 @@ export default {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    let link = _[0]
 
-    //todo 优先找空间条目链接
+    //优先找空间条目
+    let link = _[0]
+    let { getItem } = useSpaceStore()
+    const item = getItem(link)
+    if (item?.link) {
+      link = item?.link
+    }
 
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       link = 'http://' + link

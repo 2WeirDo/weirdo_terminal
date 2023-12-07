@@ -1,5 +1,5 @@
 import { CommandType } from '../../../../command'
-import { useTodoStore } from '../../../../../stores/todoStore'
+import { useTodoStore } from '@/stores/todoStore'
 import TaskType = Todo.TaskType
 
 /**

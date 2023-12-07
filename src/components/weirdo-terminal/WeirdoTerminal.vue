@@ -99,7 +99,7 @@ import TextOutputType = WeirdoTerminal.TextOutputType
 import useHistory from './history'
 import ContentOutput from './ContentOutput.vue'
 import OutputStatusType = WeirdoTerminal.OutputStatusType
-import { useTerminalConfigStore } from '../../stores/terminalConfigStore'
+import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
 import useHint from './hint'
 import UserType = User.UserType
 import { LOCAL_USER } from '../../core/commands/user/userConstant'
@@ -224,7 +224,6 @@ watchEffect(() => {
 /**
  * 输入提示符, 输入框前面的用户昵称, 当然你可以改成其它的
  */
-// todo
 const prompt = computed(() => {
   return `[${user.value?.username}]$`
 })

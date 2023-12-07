@@ -1,5 +1,5 @@
 import { CommandType } from '../../command'
-import { useTerminalConfigStore } from '../../../stores/terminalConfigStore'
+import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
 
 /**
  * background 命令

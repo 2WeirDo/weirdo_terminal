@@ -20,7 +20,13 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+    '@vue/eslint-config-typescript',
+    '@vue/eslint-config-prettier/skip-formatting'
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     parser: '@typescript-eslint/parser',

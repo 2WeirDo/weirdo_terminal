@@ -1,7 +1,7 @@
 import { CommandType } from '../../command'
 import registerCommand from './subCommands/registerCommand'
 import loginCommand from './subCommands/loginCommand'
-import { useUserStore } from '../../../stores/userStore'
+import { useUserStore } from '@/stores/userStore'
 import { LOCAL_USER } from './userConstant'
 import logoutCommand from './subCommands/logoutCommand'
 

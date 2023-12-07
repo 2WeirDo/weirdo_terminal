@@ -1,5 +1,5 @@
 import { CommandType } from '../../../command'
-import { useTerminalConfigStore } from '../../../../stores/terminalConfigStore'
+import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
 
 /**
  * 自定义终端欢迎语

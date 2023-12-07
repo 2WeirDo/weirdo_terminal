@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { toRefs } from 'vue'
-import { useTodoStore } from '../../../../stores/todoStore'
+import { useTodoStore } from '@/stores/todoStore'
 import MyDayjs from '../../../../plugins/myDayjs'
 
 // interface TodoBoxProps {
