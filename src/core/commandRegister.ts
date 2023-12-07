@@ -68,8 +68,8 @@ const commandList: CommandType[] = [
   musicCommand,
   weatherCommand,
   dujitangCommand,
+  backgroundCommand,
   backColorCommand,
-  backgroundCommand
 ]
 
 /**

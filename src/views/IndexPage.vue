@@ -1,5 +1,6 @@
 <!-- 这个主页面只负责连接终端和命令系统 -->
 <template>
+  <!-- 无法解决终端多开 -->
   <weirdo-terminal
     ref="terminalRef"
     full-screen
@@ -12,7 +13,7 @@
 import { doCommandExecute } from '../core/commandExecutor'
 import { onMounted, ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useUserStore } from '@/stores/userStore';
+import { useUserStore } from '@/stores/userStore'
 
 const terminalRef = ref()
 
@@ -31,14 +32,12 @@ const onSubmitCommand = async (inputText: string) => {
   // 这里是没传第三个参数(父级命令), 因为这里本就是全局命令(最顶级), 但是实现子父命令的时候要传递
   await doCommandExecute(inputText, terminal)
 }
-const userStore = useUserStore();
-const { loginUser } = storeToRefs(userStore);
-
+const userStore = useUserStore()
+const { loginUser } = storeToRefs(userStore)
 // 挂载终端后 : 即将用户登录信息存到storage中
 onMounted(() => {
-  userStore.getAndSetLoginUser();
-});
-
+  userStore.getAndSetLoginUser()
+})
 </script>
 
 <style></style>

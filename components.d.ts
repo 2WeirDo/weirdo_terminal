@@ -18,6 +18,8 @@ declare module 'vue' {
     AListItem: typeof import('ant-design-vue/es')['ListItem']
     AListItemMeta: typeof import('ant-design-vue/es')['ListItemMeta']
     ARow: typeof import('ant-design-vue/es')['Row']
+    ATabPane: typeof import('ant-design-vue/es')['TabPane']
+    ATabs: typeof import('ant-design-vue/es')['Tabs']
     ATag: typeof import('ant-design-vue/es')['Tag']
     ContentOutput: typeof import('./src/components/weirdo-terminal/ContentOutput.vue')['default']
     copy: typeof import('./src/components/weirdo-terminal/WeirdoTerminal copy.vue')['default']

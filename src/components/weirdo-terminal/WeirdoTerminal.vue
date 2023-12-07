@@ -3,6 +3,12 @@
   <!-- 最外层这个div主要是为了全局替换样式 通过:style -->
   <!-- handleClickWrapper点击空白聚焦输入框 -->
   <div class="weirdo_terminal-wrapper" :style="wrapperStyle" @click="handleClickWrapper">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div ref="terminalRef" class="weirdo_terminal" :style="mainStyle">
       <!-- 下面 a-collapse 包括的就是列表 -->
       <!-- a-collapse : 控制命令的折叠 -->
@@ -439,15 +445,73 @@ defineExpose({
 </script>
 
 <style scoped>
+.loader
+{
+    position: absolute;
+    right: 38px;
+    top: 38px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: linear-gradient(#14ffe9, #ffeb3b, #5d00ff); 
+    animation: animate 2.8s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.loader span
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(#14ffe9, #ffeb3b, #7b00ff);
+    animation: animate 2.8s linear infinite;
+}
+.loader span:nth-child(1)
+{
+    filter: blur(5px);
+}
+.loader span:nth-child(2)
+{
+    filter: blur(10px);
+}
+.loader span:nth-child(3)
+{
+    filter: blur(25px);
+}
+.loader span:nth-child(4)
+{
+    filter: blur(50px);
+}
+.loader:after
+{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: #240229;
+    border-radius: 50%;
+}
 .weirdo_terminal-wrapper {
   background: black;
 }
 
 .weirdo_terminal {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
   /* background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); */
-  padding: 20px;
+  padding: 25px;
   overflow: scroll;
 }
 
@@ -498,6 +562,7 @@ defineExpose({
   background: transparent;
 }
 
+/* 修改字体大小 */
 .terminal-row {
   color: white;
   font-size: 16px;

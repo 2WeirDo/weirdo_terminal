@@ -172,6 +172,7 @@ const backColorCommand: CommandType = {
   func: 'backcolor',
   alias: ['bgc'],
   name: '切换背景颜色',
+  desc: '暂时废弃',
   params: [
     {
       key: 'color',
