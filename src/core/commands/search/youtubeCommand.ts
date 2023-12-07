@@ -1,5 +1,4 @@
 import { CommandType } from '../../command'
-import { defineAsyncComponent } from 'vue'
 import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 
 const baseUrl = 'https://www.baidu.com/s'
@@ -8,7 +7,7 @@ const baseUrl = 'https://www.baidu.com/s'
  * B 站搜索命令
  * @author weirdo
  */
-const bilibiliCommand: CommandType = {
+const youtubeCommand: CommandType = {
   func: 'youtube',
   name: 'youtube 搜索',
   alias: ['ytube'],
@@ -41,4 +40,4 @@ const bilibiliCommand: CommandType = {
   }
 }
 
-export default bilibiliCommand
+export default youtubeCommand

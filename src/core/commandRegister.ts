@@ -1,15 +1,6 @@
 import { CommandType } from './command'
 import dateCommand from './commands/basic/dateCommand'
 import gotoCommand from './commands/basic/gotoCommand'
-import baiduCommand from './commands/search/baiduCommand'
-import bingCommand from './commands/search/bingCommand'
-import doubanCommand from './commands/search/doubanCommand'
-import douyinCommand from './commands/search/douyinCommand'
-import githubCommand from './commands/search/githubCommand'
-import googleCommand from './commands/search/googleCommand'
-import mdnCommand from './commands/search/mdnCommand'
-import StackoverflowCommand from './commands/search/stackoverflowCommand'
-import zhihuCommand from './commands/search/zhihuCommand'
 import shortcutCommand from './commands/terminal/shortcut/shortcutCommand'
 import helpCommand from './commands/terminal/help/helpCommand'
 import clearCommand from './commands/terminal/shortcut/clearCommand'
@@ -17,37 +8,27 @@ import ikunCommand from './commands/relax/ikun/ikunCommand'
 import todoCommand from './commands/relax/todo/todoCommand'
 import copyCommand from './commands/basic/copyCommand'
 import moyuCommand from './commands/relax/moyu/moyuCommand'
-import bilibiliCommand from './commands/search/bilibiliCommand'
-import youtubeCommand from './commands/search/youtubeCommand'
 import historyCommand from './commands/terminal/history/historyCommand'
 import hintCommand from './commands/terminal/hint/hintCommand'
 import resetCommand from './commands/terminal/reset/resetCommand'
 import welcomeCommand from './commands/terminal/welcome/welcomeCommand'
 import userCommands from './commands/user/userCommands'
 import fanyiCommand from './commands/api/fanyi/fanyiCommand'
-import juejinCommand from './commands/search/juejinCommand'
-import csdnCommand from './commands/search/csdnCommand'
 import musicCommand from './commands/api/music/musicCommand'
 import weatherCommand from './commands/basic/weather/weatherCommand'
 import dujitangCommand from './commands/api/dujitang/dujitangCommand'
 import backColorCommand from './commands/basic/backColorCommand'
 import backgroundCommand from './commands/api/background/backgroundCommand'
+import searchCommands from './commands/search/searchCommands'
+
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
  */
 const commandList: CommandType[] = [
+  ...searchCommands,
   dateCommand,
   shortcutCommand,
-  zhihuCommand,
-  StackoverflowCommand,
-  mdnCommand,
-  googleCommand,
-  githubCommand,
-  doubanCommand,
-  douyinCommand,
-  bingCommand,
-  baiduCommand,
   gotoCommand,
   helpCommand,
   clearCommand,
@@ -55,16 +36,12 @@ const commandList: CommandType[] = [
   todoCommand,
   copyCommand,
   moyuCommand,
-  bilibiliCommand,
-  youtubeCommand,
   historyCommand,
   hintCommand,
   resetCommand,
   welcomeCommand,
   userCommands,
   fanyiCommand,
-  juejinCommand,
-  csdnCommand,
   musicCommand,
   weatherCommand,
   dujitangCommand,

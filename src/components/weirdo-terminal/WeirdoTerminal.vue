@@ -69,14 +69,9 @@
       <div v-if="hint && !isRunning" class="terminal-row" style="color: #bbb">hint: {{ hint }}</div>
       <div style="margin-bottom: 16px" />
     </div>
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+
     <button class="Btn">
-      <a href="https://github.com/2WeirDo" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/2WeirDo/weirdo_terminal" target="_blank" rel="noopener noreferrer">
         <span class="svgContainer">
           <svg fill="white" viewBox="0 0 496 512" height="1.6em">
             <path
@@ -87,6 +82,9 @@
       </a>
       <span class="BG"></span>
     </button>
+    <div class="spinner">
+      <div class="spinner1"></div>
+    </div>
   </div>
 </template>
 
@@ -457,14 +455,44 @@ defineExpose({
 </script>
 
 <style scoped>
+.spinner {
+  position: absolute;
+  z-index: 10;
+  right: 25px;
+  top: 25px;
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 56px;
+  height: 56px;
+  animation: spinning82341 2.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow:
+    0px -3px 10px 0px rgb(186, 66, 255),
+    0px 3px 10px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .Btn {
   position: absolute;
   z-index: 100;
 
-  right: 30px;
-  top: 30px;
-  width: 55px;
-  height: 55px;
+  right: 33px;
+  top: 33px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -497,14 +525,14 @@ defineExpose({
   height: 100%;
   background: #151515;
   z-index: -1;
-  box-shadow: 2px 2px 5px gray;
+  box-shadow: 0px 0px 10px gray;
   border-radius: 50%;
   pointer-events: none;
   transition: all 0.3s;
 }
 
 .Btn:hover .BG {
-  transform: scale(1.1);
+  transform: scale(1.3);
   /* transform-origin: b; */
 }
 
@@ -513,54 +541,6 @@ defineExpose({
   backdrop-filter: blur(4px);
 }
 
-.loader {
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: linear-gradient(#0d413c, #46400c, #2b0e5f);
-  animation: animate 2.8s linear infinite;
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.loader span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(#32746d, #978d31, #532f79);
-  animation: animate 2.8s linear infinite;
-}
-.loader span:nth-child(1) {
-  filter: blur(5px);
-}
-.loader span:nth-child(2) {
-  filter: blur(10px);
-}
-.loader span:nth-child(3) {
-  filter: blur(25px);
-}
-.loader span:nth-child(4) {
-  filter: blur(50px);
-}
-.loader:after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background: transparent;
-  border-radius: 50%;
-}
 .weirdo_terminal-wrapper {
   background: black;
 }
