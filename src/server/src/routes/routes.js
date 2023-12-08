@@ -46,7 +46,11 @@ let routes = [
   {
     path: '/analyze/get',
     handler: require('../controller/analyzeController').getAnalyzeApi
-  }
+  },
+  {
+    path: '/inspire/get/random',
+    handler: require('../controller/inspireController').getRandomInspireApi
+  },
 ]
 
 module.exports = routes

@@ -1,6 +1,7 @@
 import { CommandType } from '../../../command'
 import myAxios from '@/plugins/myAxios'
 import { useSpaceStore } from '@/stores/spaceStore'
+import { getAnalyze } from './analyzeApi'
 
 /**
  * @author weirdo
@@ -33,8 +34,8 @@ const analyzeCommand: CommandType = {
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       link = 'http://' + link
     }
-    const res: any = await myAxios.post('/analyze/get', { link })
-    
+    const res: any = await getAnalyze(link)
+
     if (res?.code === 0) {
       // console.log(res.data);
       terminal.writeTextSuccessResult(res.data)

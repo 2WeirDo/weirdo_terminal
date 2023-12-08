@@ -1,5 +1,5 @@
 import { CommandType } from '../../../command'
-import myAxios from '@/plugins/myAxios'
+import { getDujitang } from './dujitangApi'
 
 /**
  * 来毒鸡汤看看
@@ -11,8 +11,8 @@ const dujitangCommand: CommandType = {
   options: [],
   async action(options, terminal) {
     // 随机获取毒鸡汤
-    const res = await myAxios.post('/dujitang/get/random')
-    terminal.writeTextResult(res.data)
+    const res = await getDujitang();
+    terminal.writeTextSuccessResult(res.data)
   }
 }
 

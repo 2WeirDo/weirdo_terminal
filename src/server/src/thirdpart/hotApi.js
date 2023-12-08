@@ -38,7 +38,7 @@ async function getHot(platform) {
   const api = `https://api.vvhan.com/api/hotlist?type=${platform}`
   let q = await axios.get(api).then((res) =>
     res.data.data.slice(0, 10).map((item) => {
-      return `${item.hot}&nbsp&nbsp&nbsp&nbsp    <a href="${item.url}" target="_blank" style="color: white; border-bottom: 1px solid pink" >${item.title}</a>`
+      return `${item.hot}&nbsp---&nbsp    <a href="${item.url}" target="_blank" style="color: white; border-bottom: 1px solid pink" >${item.title}</a>`
     })
   )
   q = JSON.parse(JSON.stringify(q))

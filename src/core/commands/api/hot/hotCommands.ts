@@ -26,7 +26,7 @@ const hotCommand: CommandType = {
     }
     const res:any = await getHot(_[0])
     if (res?.code === 0) {
-        terminal.writeTextResult(res.data)
+        terminal.writeTextSuccessResult(`请求成功, 以下为热榜信息, 点击链接即可跳转页面。<br>${res.data}`)
     } 
   }
 }

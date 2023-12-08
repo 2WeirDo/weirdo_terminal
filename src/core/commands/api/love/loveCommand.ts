@@ -1,5 +1,5 @@
 import { CommandType } from '../../../command'
-import myAxios from '@/plugins/myAxios'
+import { getLove } from './loveApi'
 
 /**
  * 来情话看看
@@ -11,8 +11,8 @@ const loveCommand: CommandType = {
   options: [],
   async action(options, terminal) {
     // 随机获取情话
-    const res = await myAxios.post('/love/get/random')
-    terminal.writeTextResult(res.data)
+    const res = await getLove()
+    terminal.writeTextSuccessResult(res.data)
   }
 }
 

@@ -24,10 +24,7 @@ import spaceCommands from './commands/space/spaceCommands'
 import loveCommand from './commands/api/love/loveCommand'
 import hotCommand from './commands/api/hot/hotCommands'
 import analyzeCommand from './commands/api/analyze/analyzeCommand'
-
-
-
-
+import inspireCommand from './commands/api/inspire/inspireCommand'
 
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
@@ -57,7 +54,8 @@ const commandList: CommandType[] = [
   backColorCommand,
   loveCommand,
   hotCommand,
-  analyzeCommand
+  analyzeCommand,
+  inspireCommand
 ]
 
 /**
