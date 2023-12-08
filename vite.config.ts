@@ -18,6 +18,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/assets/base.scss";`
+      }
+    }
+  },
   // bug: 前端无法识别process.env
   define: {
     'process.env': process.env

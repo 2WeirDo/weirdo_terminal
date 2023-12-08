@@ -15,7 +15,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style scoped lang="scss">
 .demo {
   background-color: rgb(249, 249, 248);
   border-radius: 25px;

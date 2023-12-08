@@ -23,7 +23,7 @@ const gameList = [
 const currentGame = gameList[Math.floor(Math.random() * gameList.length)]
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .main {
   width: 80%;
   height: 60vh;

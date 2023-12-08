@@ -20,4 +20,4 @@ import { commandList } from '../../../commandRegister'
 onMounted(() => {})
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

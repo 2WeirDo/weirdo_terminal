@@ -62,4 +62,4 @@ const usageStr = computed(() => {
 onMounted(() => {})
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

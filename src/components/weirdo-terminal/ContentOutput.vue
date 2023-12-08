@@ -59,7 +59,7 @@ const outputTagColor = computed((): string => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .content-output :deep(.ant-tag) {
   border-radius: 0;
   font-size: 16px;

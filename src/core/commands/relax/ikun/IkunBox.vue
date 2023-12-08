@@ -37,7 +37,7 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .main {
   width: 100%;
   height: 80vh;

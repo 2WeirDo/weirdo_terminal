@@ -59,7 +59,9 @@
         >
           <template #addonBefore>
             <!-- 这是插槽, 输入框前面放用户名称 -->
-            <span class="command-input-prompt" style="text-shadow: 1px 0px 2px rgb(243, 134, 134);">😈{{ prompt }}</span>
+            <span class="command-input-prompt" style="text-shadow: 1px 0px 2px rgb(243, 134, 134)"
+              >😈{{ prompt }}</span
+            >
           </template>
         </a-input>
       </div>
@@ -71,7 +73,11 @@
     </div>
 
     <button class="Btn">
-      <a href="https://github.com/2WeirDo/weirdo_terminal" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://github.com/2WeirDo/weirdo_terminal"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <span class="svgContainer">
           <svg fill="white" viewBox="0 0 496 512" height="1.6em">
             <path
@@ -453,7 +459,7 @@ defineExpose({
 })
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .spinner {
   position: absolute;
   z-index: 10;
@@ -605,4 +611,162 @@ defineExpose({
   font-size: 16px;
   font-family: courier-new, courier, monospace;
 }
+</style> -->
+
+<style scoped lang="scss">
+.spinner {
+  position: absolute;
+  z-index: 10;
+  right: 25px;
+  top: 25px;
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 56px;
+  height: 56px;
+  animation: spinning82341 2.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -3px 10px 0px rgb(186, 66, 255), 0px 3px 10px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Btn {
+  position: absolute;
+  z-index: 100;
+  right: 33px;
+  top: 33px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: #151515;
+  z-index: -1;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.Btn:hover {
+  .BG {
+    transform: scale(1.3);
+
+    /* transform-origin: b; */
+  }
+
+  .svgContainer {
+    background-color: rgba(156, 156, 156, 0.466);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.weirdo_terminal-wrapper {
+  background: black;
+}
+
+.weirdo_terminal {
+  background: rgba(0, 0, 0, 0.7);
+
+  /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
+  /* background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); */
+  padding: 25px;
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  span {
+    font-size: 16px;
+  }
+
+  :deep(.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header) {
+    color: white;
+    padding: 0;
+  }
+
+  :deep(.ant-collapse) {
+    background: none;
+  }
+
+  :deep(.ant-collapse-borderless > .ant-collapse-item) {
+    border: none;
+  }
+
+  :deep(.ant-collapse-content > .ant-collapse-content-box) {
+    padding: 0;
+  }
+}
+
+.command-input {
+  caret-color: white;
+
+  :deep(input) {
+    color: white !important;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  :deep(.ant-input-group-addon) {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+.command-input-prompt {
+  color: white;
+  background: transparent;
+}
+
+/* 修改字体大小 */
+
+.terminal-row {
+  color: white;
+  font-size: 16px;
+  font-family: courier-new, courier, monospace;
+}
+
 </style>
