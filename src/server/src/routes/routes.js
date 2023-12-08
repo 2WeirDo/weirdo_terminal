@@ -51,6 +51,10 @@ let routes = [
     path: '/inspire/get/random',
     handler: require('../controller/inspireController').getRandomInspireApi
   },
+  {
+    path: '/film/get',
+    handler: require('../controller/filmController.js').getFilmApi
+  }
 ]
 
 module.exports = routes

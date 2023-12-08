@@ -35,11 +35,7 @@ const analyzeCommand: CommandType = {
       link = 'http://' + link
     }
     const res: any = await getAnalyze(link)
-
-    if (res?.code === 0) {
-      // console.log(res.data);
-      terminal.writeTextSuccessResult(res.data)
-    }
+    terminal.writeTextSuccessResult(res)
   }
 }
 

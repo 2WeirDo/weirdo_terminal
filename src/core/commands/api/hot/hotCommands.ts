@@ -24,10 +24,10 @@ const hotCommand: CommandType = {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    const res:any = await getHot(_[0])
-    if (res?.code === 0) {
-        terminal.writeTextSuccessResult(`请求成功, 以下为热榜信息, 点击链接即可跳转页面。<br>${res.data}`)
-    } 
+    const res: any = await getHot(_[0])
+    if (res) {
+      terminal.writeTextSuccessResult(`请求成功, 以下为热榜信息, 点击链接即可跳转页面。<br>${res}`)
+    } else terminal.writeTextErrorResult('请求失败')
   }
 }
 
