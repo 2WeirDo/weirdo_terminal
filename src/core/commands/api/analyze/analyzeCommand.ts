@@ -1,14 +1,14 @@
-import { CommandType } from '../../command'
+import { CommandType } from '../../../command'
+import myAxios from '@/plugins/myAxios'
 import { useSpaceStore } from '@/stores/spaceStore'
 
 /**
- * 跳转命令
  * @author weirdo
  */
-export default {
-  func: 'goto',
-  name: '网页跳转',
-  alias: ['to', 'open', 'visit', 'jump'],
+const analyzeCommand: CommandType = {
+  func: 'analyze',
+  name: '网站技术分析',
+  alias: ['fenxi'],
   params: [
     {
       key: 'link',
@@ -16,22 +16,13 @@ export default {
       required: true
     }
   ],
-  options: [
-    {
-      key: 'self',
-      desc: '是否当前页面打开',
-      alias: ['s'],
-      type: 'boolean',
-      defaultValue: false
-    }
-  ],
-  action(options, terminal): void {
-    const { _, self } = options
+  options: [],
+  async action(options, terminal) {
+    const { _ } = options
     if (_.length < 1) {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-
     //优先找空间条目
     let link = _[0]
     let { getItem } = useSpaceStore()
@@ -39,14 +30,16 @@ export default {
     if (item?.link) {
       link = item?.link
     }
-
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       link = 'http://' + link
     }
-    if (self) {
-      window.location.href = link
-    } else {
-      window.open(link)
+    const res: any = await myAxios.post('/analyze/get', { link })
+    
+    if (res?.code === 0) {
+      // console.log(res.data);
+      terminal.writeTextSuccessResult(res.data)
     }
   }
-} as CommandType
+}
+
+export default analyzeCommand

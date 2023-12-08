@@ -42,6 +42,10 @@ let routes = [
   {
     path: '/hot/get',
     handler: require('../controller/hotController').getHotApi
+  },
+  {
+    path: '/analyze/get',
+    handler: require('../controller/analyzeController').getAnalyzeApi
   }
 ]
 

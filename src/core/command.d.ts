@@ -16,7 +16,7 @@ interface CommandType {
   // 参数配置
   params?: CommandParamsType[]
   // 选项配置
-  options?: CommandOptionType[]
+  options: CommandOptionType[]
   // 子命令
   subCommands?: Record<string, CommandType>
   // 执行功能

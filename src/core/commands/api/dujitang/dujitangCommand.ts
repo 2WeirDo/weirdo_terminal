@@ -1,5 +1,5 @@
 import { CommandType } from '../../../command'
-import myAxios from '../../../../plugins/myAxios'
+import myAxios from '@/plugins/myAxios'
 
 /**
  * 来毒鸡汤看看

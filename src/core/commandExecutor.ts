@@ -99,6 +99,7 @@ const getCommand = (text: string, parentCommand?: CommandType): CommandType => {
 ],
  */
 
+// bug 这里必须传入 options, 所以命令配置中必须传入options数组, 否则报错
 const doParse = (text: string, commandOptions: CommandOptionType[]): getopts.ParsedOptions => {
   // 过滤掉关键词 (比如上例中的 baidu )
   const args: string[] = text.split(' ').slice(1)

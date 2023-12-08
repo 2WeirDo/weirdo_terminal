@@ -13,7 +13,7 @@ const hotCommand: CommandType = {
   params: [
     {
       key: 'platform',
-      desc: '目标平台',
+      desc: '目标平台名称(拼音)',
       required: true
     }
   ],

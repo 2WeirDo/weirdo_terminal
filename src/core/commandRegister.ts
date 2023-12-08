@@ -23,6 +23,7 @@ import searchCommands from './commands/search/searchCommands'
 import spaceCommands from './commands/space/spaceCommands'
 import loveCommand from './commands/api/love/loveCommand'
 import hotCommand from './commands/api/hot/hotCommands'
+import analyzeCommand from './commands/api/analyze/analyzeCommand'
 
 
 
@@ -55,7 +56,8 @@ const commandList: CommandType[] = [
   backgroundCommand,
   backColorCommand,
   loveCommand,
-  hotCommand
+  hotCommand,
+  analyzeCommand
 ]
 
 /**

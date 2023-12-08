@@ -59,7 +59,7 @@
         >
           <template #addonBefore>
             <!-- 这是插槽, 输入框前面放用户名称 -->
-            <span class="command-input-prompt">😈{{ prompt }}</span>
+            <span class="command-input-prompt" style="text-shadow: 1px 0px 2px rgb(243, 134, 134);">😈{{ prompt }}</span>
           </template>
         </a-input>
       </div>
