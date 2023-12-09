@@ -18,12 +18,8 @@ export const useUserStore = defineStore('user', {
   persist: {
     key: 'user-store',
     storage: window.localStorage,
-    beforeRestore: (context) => {
-      console.log('load userStore data start')
-    },
-    afterRestore: (context) => {
-      console.log('load userStore data end')
-    }
+    beforeRestore: (context) => {},
+    afterRestore: (context) => {}
   },
   actions: {
     async getAndSetLoginUser() {

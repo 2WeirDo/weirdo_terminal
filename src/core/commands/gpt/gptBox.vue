@@ -54,7 +54,7 @@ onMounted(async () => {
         res.value = 'loading...'
         break
     }
-  }, 500)
+  }, 250)
   // 在挂载后执行异步调用
   try {
     const response:any = await getGptOutput(props.message, props.memory)
@@ -74,10 +74,11 @@ displayContent = computed(() => {
 
 <style scoped lang="scss">
 .chat-box {
-  width: auto;
+  width: 66vw;
   height: auto;
+  border-radius: 5px;
   background-color: rgba($color: #282629, $alpha: 0.5);
   margin: 10px 0 10px 0;
-  padding: 10px 10px;
+  padding: 20px 20px 5px 20px;
 }
 </style>
