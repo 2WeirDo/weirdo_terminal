@@ -35,30 +35,21 @@ async function example() {
     apiBaseUrl: 'https://api.kwwai.top/v1',
     apiKey: 'sk-QipCiTXBHeXWheHoD3168bF695C24cEdA53c259282564d5b'
   })
+  let res = await api.sendMessage('你是什么')
+  console.log(res.text)
 
-  const res = await api.sendMessage('困死我了')
+  // send a follow-up
+  res = await api.sendMessage('你能扩充一下吗', {
+    parentMessageId: res.id
+  })
+  console.log(res.text)
+
+  // send another follow-up
+  res = await api.sendMessage('我们刚刚谈论了什么?', {
+    parentMessageId: res.id
+  })
   console.log(res.text)
 }
 
 example()
 
-// import { ChatGPTAPI } from 'chatgpt'
-// import { gptConfig } from '../src/server/src/config/config.js'
-// /**
-//  * 获取gpt返回的内容
-//  * @return {Promise<*[]>}
-//  */
-
-// async function getGptOutput(message) {
-//   if (!message) return null
-//   const api = new ChatGPTAPI({
-//     apiBaseUrl: gptConfig.baseUrl,
-//     apiKey: gptConfig.key
-//   })
-//   const res = await api.sendMessage(message)
-//   console.log("wwww: ", res.text);
-//   // return res.text
-// }
-
-// // export { getGptOutput }
-// getGptOutput('你好啊')

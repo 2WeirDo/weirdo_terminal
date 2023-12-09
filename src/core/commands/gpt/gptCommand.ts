@@ -1,8 +1,8 @@
 import { CommandType } from '../../command'
-
 import ComponentOutputType = WeirdoTerminal.ComponentOutputType
 import { defineAsyncComponent } from 'vue'
-
+import { useGptStore } from '@/stores/gptStore'
+import { storeToRefs } from 'pinia'
 /**
  * gpt命令
  */
@@ -25,12 +25,18 @@ const gptCommand: CommandType = {
       return
     }
     let message = _[0]
+    // bug 这个只能放在action里面
+    // 在 Vue 组件外使用 Vue 的 store 或者组件实例并不总是可行的，
+    // 因为它们需要在 Vue 实例的上下文中运行。这可能导致 store 的一些方法无法正常工作。
+    let gptStore = useGptStore()
+    let { memory } = storeToRefs(gptStore)
     const output: ComponentOutputType = {
       type: 'component',
       // 动态组件
       component: defineAsyncComponent(() => import('./gptBox.vue')),
       props: {
-        message
+        message,
+        memory
       }
     }
     terminal.writeResult(output)

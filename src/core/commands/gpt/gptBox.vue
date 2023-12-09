@@ -10,10 +10,11 @@ import { marked } from 'marked'
 
 interface ChatBoxProps {
   message: string
+  memory : any
 }
 
 marked.setOptions({
-  renderer: new marked.Renderer,
+  renderer: new marked.Renderer(),
   gfm: true,
   async: false,
   // highlight(code: string): string {
@@ -21,7 +22,7 @@ marked.setOptions({
   // },
   // 移除被弃用的选项或设置为新的选项
   mangle: false, // 这个选项已经被弃用
-  headerIds: false, // 这个选项已经被弃用
+  headerIds: false // 这个选项已经被弃用
   // headerPrefix: '', // 这个选项已经被弃用
 })
 
@@ -56,7 +57,7 @@ onMounted(async () => {
   }, 500)
   // 在挂载后执行异步调用
   try {
-    const response = await getGptOutput(props.message)
+    const response:any = await getGptOutput(props.message, props.memory)
     clearInterval(loadingInterval)
     res.value = response
   } catch (error) {
@@ -66,13 +67,6 @@ onMounted(async () => {
 
 // 计算属性来根据 res 的状态动态显示内容
 displayContent = computed(() => {
-  // if (res.value === 'loading') {
-  //   return 'Loading...'
-  // } else if (typeof res === 'object' && 'value' in res) {
-  //   return res.value
-  // } else {
-  //   return '' // 其他情况返回空字符串或者其他默认内容
-  // }
   // @ts-ignore
   return marked(res.value)
 })
@@ -84,6 +78,6 @@ displayContent = computed(() => {
   height: auto;
   background-color: rgba($color: #282629, $alpha: 0.5);
   margin: 10px 0 10px 0;
-  padding: 10px 10px 5px 20px;
+  padding: 10px 10px;
 }
 </style>

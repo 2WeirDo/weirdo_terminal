@@ -5,22 +5,29 @@ import { gptConfig } from '../config/config.js'
  * @return {Promise<*[]>}
  */
 
-async function getGptOutput(message) {
+async function getGptOutput(message, memory) {
   if (!message) return null
   let api = new ChatGPTAPI({
     apiBaseUrl: gptConfig.baseUrl,
     apiKey: gptConfig.key
   })
-  let res = await api.sendMessage(message)
 
   // let res = await api.sendMessage(message, {
-  //   onProgress: (partialResponse) => console.log(partialResponse.text)
+  //   parentMessageId: gptId
   // })
+  // return [res.text, res.id]
 
-  // res = await api.sendMessage(message, {
-  //   parentMessageId: res.id
-  // })
-  // console.log("res: ", res);
+  let res;
+  let parentId = null;
+  for (const item of memory) {
+    res = await api.sendMessage(item, {
+      parentMessageId: parentId
+    });
+    parentId = res.id;
+  }
+  res = await api.sendMessage(message, {
+    parentMessageId: parentId
+  })
   return res.text
 }
 
