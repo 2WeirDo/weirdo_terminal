@@ -17,14 +17,23 @@ async function getGptOutput(message, memory) {
   // })
   // return [res.text, res.id]
 
-  let res;
-  let parentId = null;
+  // let res
+  // let parentId = null
+  // let item = memory[memory.length - 1]
+  // res = await api.sendMessage(item, {
+  //   parentMessageId: parentId
+  // })
+  // parentId = res.id
+
+  let res
+  let parentId = null
   for (const item of memory) {
     res = await api.sendMessage(item, {
       parentMessageId: parentId
-    });
-    parentId = res.id;
+    })
+    parentId = res.id
   }
+
   res = await api.sendMessage(message, {
     parentMessageId: parentId
   })

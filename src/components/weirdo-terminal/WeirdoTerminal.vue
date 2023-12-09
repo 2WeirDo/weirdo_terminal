@@ -106,6 +106,7 @@ import useHistory from './history'
 import ContentOutput from './ContentOutput.vue'
 import OutputStatusType = WeirdoTerminal.OutputStatusType
 import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
+import { useGptStore } from '@/stores/gptStore'
 import useHint from './hint'
 import UserType = User.UserType
 import { LOCAL_USER } from '../../core/commands/user/userConstant'
@@ -140,6 +141,7 @@ const isRunning = ref(false)
 
 // 引入终端配置状态
 const configStore = useTerminalConfigStore()
+const gptStore = useGptStore()
 
 /**
  * 初始命令
