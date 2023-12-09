@@ -16,9 +16,18 @@ dependencies:
   getopts:
     specifier: ^2.3.0
     version: 2.3.0
+  highlight.js:
+    specifier: ^11.8.0
+    version: 11.8.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
+  marked:
+    specifier: ^5.1.0
+    version: 5.1.0
+  marked-highlight:
+    specifier: ^2.0.9
+    version: 2.0.9(marked@5.1.0)
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.2.2)(vue@3.3.4)
@@ -42,6 +51,9 @@ devDependencies:
   '@types/lodash':
     specifier: ^4.14.202
     version: 4.14.202
+  '@types/marked':
+    specifier: ^5.0.0
+    version: 5.0.0
   '@types/node':
     specifier: ^18.18.5
     version: 18.18.5
@@ -518,6 +530,10 @@ packages:
 
   /@types/lodash@4.14.202:
     resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: true
+
+  /@types/marked@5.0.0:
+    resolution: {integrity: sha512-YcZe50jhltsCq7rc9MNZC/4QB/OnA2Pd6hrOSTOFajtabN+38slqgDDCeE/0F83SjkKBQcsZUj7VLWR0H5cKRA==}
     dev: true
 
   /@types/node@18.18.5:
@@ -2108,6 +2124,11 @@ packages:
     hasBin: true
     dev: true
 
+  /highlight.js@11.8.0:
+    resolution: {integrity: sha512-MedQhoqVdr0U6SSnWPzfiadUcDHfN/Wzq25AkXiQv9oiOO/sG0S7XkvpFIqWBl9Yq1UYyYOOVORs5UW2XlPyzg==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
   /hosted-git-info@4.1.0:
     resolution: {integrity: sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA==}
     engines: {node: '>=10'}
@@ -2474,6 +2495,20 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /marked-highlight@2.0.9(marked@5.1.0):
+    resolution: {integrity: sha512-HAK1WJSK6CGVDzplOf6layWFz1lHm8Fsjd+SEUYmLhAZmM8TlYmErC/hTphoiOxogYqGQGt3Ghug3Yhs+s+3jw==}
+    peerDependencies:
+      marked: '>=4 <12'
+    dependencies:
+      marked: 5.1.0
+    dev: false
+
+  /marked@5.1.0:
+    resolution: {integrity: sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==}
+    engines: {node: '>= 18'}
+    hasBin: true
+    dev: false
 
   /memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
