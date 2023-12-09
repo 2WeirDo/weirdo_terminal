@@ -11,16 +11,15 @@
     <!-- 如果是组件类型 -->
     <!-- 通过动态组件实现根据输入命令按需加载需要的组件 -->
     <!-- 比如输入 todo, 出来一个todo组件 -->
-    <component
-      :is="output.component"
-      v-if="output.type === 'component'"
-      v-bind="output.props ?? {}"
-    />
+    <template v-if="output.type === 'component'">
+      <a-tag v-if="outputTagColor" :color="outputTagColor">{{ output.status }} </a-tag>
+      <component :is="output.component.component" v-bind="output.component.props ?? {}" />
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import transferText from '../../utils/transferText'
+// import transferText from '../../utils/transferText'
 import OutputType = WeirdoTerminal.OutputType
 import { computed, toRefs } from 'vue'
 

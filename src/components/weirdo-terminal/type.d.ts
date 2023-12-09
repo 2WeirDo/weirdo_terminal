@@ -68,7 +68,7 @@ declare namespace WeirdoTerminal {
     // 写命令成功文本结果
     writeTextSuccessResult: (text: string) => void
     // 写命令结果
-    writeResult: (output: OutputType) => void
+    writeResult: (output: OutputType, status?: OutputStatusType) => void
     // 输入框聚焦
     focusInput: () => void
     // 获取输入框是否聚焦

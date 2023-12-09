@@ -102,6 +102,8 @@ import CommandInputType = WeirdoTerminal.CommandInputType
 import { registerShortcuts } from './shortcuts'
 import TerminalType = WeirdoTerminal.TerminalType
 import TextOutputType = WeirdoTerminal.TextOutputType
+import ComponentOutputType = WeirdoTerminal.ComponentOutputType
+
 import useHistory from './history'
 import ContentOutput from './ContentOutput.vue'
 import OutputStatusType = WeirdoTerminal.OutputStatusType
@@ -325,8 +327,13 @@ const writeTextSuccessResult = (text: string) => {
  * 写结果
  * @param output
  */
-const writeResult = (output: OutputType) => {
-  currentNewCommand.resultList.push(output)
+const writeResult = (output: OutputType, status?: OutputStatusType) => {
+  const newOutput: ComponentOutputType = {
+    component: output,
+    type: 'component',
+    status: 'success'
+  }
+  currentNewCommand.resultList.push(newOutput)
 }
 
 /**
@@ -474,7 +481,9 @@ defineExpose({
   text-align: center;
   border-radius: 50px;
   filter: blur(1px);
-  box-shadow: 0px -3px 10px 0px rgb(186, 66, 255), 0px 3px 10px 0px rgb(0, 225, 255);
+  box-shadow:
+    0px -3px 10px 0px rgb(186, 66, 255),
+    0px 3px 10px 0px rgb(0, 225, 255);
 }
 
 .spinner1 {
@@ -616,5 +625,4 @@ defineExpose({
   font-size: 16px;
   font-family: courier-new, courier, monospace;
 }
-
 </style>
