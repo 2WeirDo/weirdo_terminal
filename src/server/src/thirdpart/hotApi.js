@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 /**
  * 随机获取热榜信息
@@ -13,6 +13,6 @@ async function getHot(platform) {
   return await axios.get(api).then((res) => res.data.data)
 }
 
-module.exports = {
+export {
   getHot
 }

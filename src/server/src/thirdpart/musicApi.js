@@ -1,6 +1,7 @@
 // NeteaseCloudMusicApi : 网易云音乐 Node.js API
 // https://www.npmjs.com/package/NeteaseCloudMusicApi
-const { cloudsearch, playlist_detail } = require('NeteaseCloudMusicApi')
+import pkg from 'NeteaseCloudMusicApi'
+const { cloudsearch, playlist_detail } = pkg
 
 /**
  * 搜索音乐
@@ -42,7 +43,4 @@ async function playlistDetail() {
   return result.body.playlist.tracks
 }
 
-module.exports = {
-  searchMusics,
-  playlistDetail
-}
+export { searchMusics, playlistDetail }

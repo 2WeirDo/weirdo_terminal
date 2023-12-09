@@ -1,6 +1,7 @@
-const axios = require('axios')
-const MD5 = require('md5')
-const { baiduFanYiConfig } = require('../config/getConfig')
+import axios from 'axios'
+import MD5 from 'md5'
+// import config from '../config/config.js'
+import { baiduFanYiConfig } from '../config/config.js'
 
 const appid = baiduFanYiConfig?.appid
 const key = baiduFanYiConfig?.key
@@ -35,6 +36,4 @@ async function translate(keywords, config) {
   }).then((res) => res.data)
 }
 
-module.exports = {
-  translate
-}
+export { translate }

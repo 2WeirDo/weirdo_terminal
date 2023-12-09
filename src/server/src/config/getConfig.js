@@ -2,13 +2,14 @@
  * 获取当前环境的配置
  * @author weirdo
  */
-let config;
-const env = process.env.NODE_ENV ?? "local";
+let config
+const env = process.env.NODE_ENV ?? 'local'
 
-if (env === "local") {
-  config = require("./config");
+if (env === 'local') {
+  config = import('./config.js')
 } else {
-  config = require(`./config.${env}`);
+  config = import(`./config.${env}.js`)
 }
 
-module.exports = config;
+export default config
+

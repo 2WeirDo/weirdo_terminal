@@ -1,5 +1,5 @@
 // 业务逻辑层
-const { searchMusics } = require('../thirdpart/musicApi')
+import { searchMusics } from '../thirdpart/musicApi.js'
 
 /**
  * 获取单首音乐
@@ -21,6 +21,6 @@ async function getSingleMusic(keywords) {
 //   return await playlistDetail();
 // }
 
-module.exports = {
+export {
   getSingleMusic
 }

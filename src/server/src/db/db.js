@@ -2,8 +2,8 @@
  * Node.js应用中使用Sequelize库连接到MySQL数据库
  */
 
-const { Sequelize } = require("sequelize");
-const { dbConfig } = require("../config/getConfig");
+import { Sequelize } from 'sequelize'
+import { dbConfig } from '../config/config.js'
 
 /**
  * 创建数据库实例
@@ -15,22 +15,22 @@ const sequelize = new Sequelize({
   password: dbConfig.password,
   host: dbConfig.host,
   port: dbConfig.port,
-  dialect: "mysql", // 指定使用的数据库类型
-  logging: console.log, // 指定日志输出函
-});
+  dialect: 'mysql', // 指定使用的数据库类型
+  logging: console.log // 指定日志输出函
+})
 
 // 测试连接
 // 使用 .authenticate() 函数测试连接是否正常：
 sequelize
   .authenticate()
   .then(() => {
-    console.log("MySQL client connected");
+    console.log('MySQL client connected')
   })
   .catch((e) => {
-    console.error("Unable to connect to MySQL", e);
-  });
+    console.error('Unable to connect to MySQL', e)
+  })
 
-module.exports = sequelize;
+export default sequelize
 
 // 默认情况下,Sequelize 将保持连接打开状态,并对所有查询使用相同的连接.
 // 如果需要需要关闭连接,请调用 sequelize.close()

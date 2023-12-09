@@ -1,14 +1,10 @@
-const MyError = require('../exception/index')
-const { Op } = require('sequelize')
+import MyError from '../exception/index.js'
+import { Op } from 'sequelize'
 // where 子句有很多运算符,可以从 Op 中以 Symbols 的形式使用.
 
-const {
-  NO_AUTH_ERROR_CODE,
-  REQUEST_PARAMS_ERROR_CODE,
-  NOT_FOUND_ERROR_CODE
-} = require('../exception/errorCode')
-const UserModel = require('../model/user')
-const md5 = require('md5')
+import { NO_AUTH_ERROR_CODE, REQUEST_PARAMS_ERROR_CODE, NOT_FOUND_ERROR_CODE } from '../exception/errorCode.js'
+import UserModel from '../model/user.js'
+import md5 from 'md5'
 
 // 密码加盐
 const SALT = 'coder_weirdo'
@@ -102,7 +98,7 @@ async function userLogin(username, password, req) {
   return user
 }
 
-module.exports = {
+export {
   userRegister,
   userLogin,
   getLoginUser

@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 /**
  * 随机获取情话
@@ -9,6 +9,6 @@ async function getLove() {
   return await axios.get(api).then((res) => res.data.ishan);
 }
 
-module.exports = {
+export {
   getLove,
 };

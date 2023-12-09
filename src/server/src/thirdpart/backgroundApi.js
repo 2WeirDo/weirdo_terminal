@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from "axios"
 
 /**
  * 随机获取背景
@@ -9,6 +9,6 @@ async function getRandomBackground() {
   return await axios.get(api).then((res) => res.data.imgurl)
 }
 
-module.exports = {
+export {
   getRandomBackground
 }

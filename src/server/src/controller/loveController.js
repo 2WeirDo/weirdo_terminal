@@ -1,8 +1,8 @@
 // 请求层 : 接收前端发起的请求, 拿到参数
 // 请求层调用逻辑层的方法或者调用第三方api
-const { getLove } = require('../thirdpart/loveApi')
-const MyError = require('../exception')
-const { THIRD_PART_SERVICE_ERROR_CODE } = require('../exception/errorCode')
+import { getLove } from '../thirdpart/loveApi.js'
+import MyError from '../exception/index.js'
+import { THIRD_PART_SERVICE_ERROR_CODE } from '../exception/errorCode.js'
 
 /**
  * 随机获取情话
@@ -19,6 +19,6 @@ async function getRandomLoveApi(event, req, res) {
   return result
 }
 
-module.exports = {
+export {
   getRandomLoveApi
 }

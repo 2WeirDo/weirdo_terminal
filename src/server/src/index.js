@@ -3,8 +3,8 @@
  * 并注册一些接口路由，最后监听指定的端口以便接受请求。
  */
 
-const { CloudBaseRunServer } = require('./server/server.js')
-const routes = require('./routes/routes.js')
+import { CloudBaseRunServer } from './server/server.js'
+import routes from './routes/routes.js'
 
 // 创建云托管 Server 实例
 const server = new CloudBaseRunServer()

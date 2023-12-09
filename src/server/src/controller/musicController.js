@@ -1,6 +1,6 @@
-const { getSingleMusic } = require('../service/musicService')
-const MyError = require('../exception')
-const { REQUEST_PARAMS_ERROR_CODE, NOT_FOUND_ERROR_CODE } = require('../exception/errorCode')
+import { getSingleMusic } from '../service/musicService.js'
+import MyError from '../exception/index.js'
+import { REQUEST_PARAMS_ERROR_CODE, NOT_FOUND_ERROR_CODE } from '../exception/errorCode.js'
 
 /**
  * 获取单首音乐
@@ -37,6 +37,6 @@ async function getSingleMusicApi(event, req, res) {
 //   return songs;
 // }
 
-module.exports = {
+export {
   getSingleMusicApi
 }

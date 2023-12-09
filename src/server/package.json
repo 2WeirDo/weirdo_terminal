@@ -2,6 +2,7 @@
   "name": "weirdo_terminal_server",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=local node src/index.js ",
@@ -9,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "chatgpt": "^5.2.5",
     "sequelize": "^6.21.3",
     "express": "^4.17.2",
     "body-parser": "^1.19.0",

@@ -1,5 +1,4 @@
 import { CommandType } from '../../../command'
-import myAxios from '@/plugins/myAxios'
 import { useSpaceStore } from '@/stores/spaceStore'
 import { getAnalyze } from './analyzeApi'
 

@@ -1,19 +1,22 @@
 /**
  * 使用Express框架来创建一个基于HTTP的Web服务器。
  */
-const express = require('express')
-const bodyParser = require('body-parser')
-const expressSession = require('express-session')
-const redis = require('redis')
-const { redisConfig } = require('../config/getConfig')
-const MyError = require('../exception/index')
-const http = require('http')
-const { FORBIDDEN_ERROR_CODE } = require('../exception/errorCode')
-const morgan = require('morgan') // 用于记录HTTP请求日志。
-const RedisStore = require('connect-redis')(expressSession) // 用于将Express会话存储到Redis中。
+import express from 'express'
+import pkg from 'body-parser';
+const { urlencoded, json } = pkg;
+import expressSession from 'express-session'
+import { createClient } from 'redis'
+import {redisConfig} from '../config/config.js'
+import MyError from '../exception/index.js'
+import { createServer } from 'http'
+import {FORBIDDEN_ERROR_CODE} from '../exception/errorCode.js'
+import morgan from 'morgan' // 用于记录HTTP请求日志。
+import connectRedis from 'connect-redis';
+const RedisStore = connectRedis(expressSession);
+ // 用于将Express会话存储到Redis中。
 
 // 创建一个Redis客户端实例，并配置它连接到Redis数据库。
-const redisClient = redis.createClient(redisConfig)
+const redisClient = createClient(redisConfig)
 
 redisClient.on('connect', function () {
   console.log('Redis client connected')
@@ -34,8 +37,8 @@ class ExpressServer {
     this.app.use(morgan('short'))
     // extended 参数是一个布尔值，它指定了在解析请求体时是否使用扩展模式。当它false时，
     // 它会使用 Node.js 内置的 querystring 模块来解析数据，只支持简单的键值对数据。
-    this.app.use(bodyParser.urlencoded({ extended: false, limit: requestLimit }))
-    this.app.use(bodyParser.json({ limit: requestLimit }))
+    this.app.use(urlencoded({ extended: false, limit: requestLimit }))
+    this.app.use(json({ limit: requestLimit }))
 
     // 隐藏服务器的标识信息。它的值通常是 "Express" 或 "Node.js"，
     // 通过将其设置为 false，Express 将不再在响应头中包含这个字段，从而隐藏服务器的技术信息。
@@ -86,7 +89,7 @@ class ExpressServer {
 
     // 创建了一个HTTP服务器并将Express.js应用程序绑定到这个服务器上，
     // 这样应用程序就可以监听HTTP请求并处理它们。
-    this.server = http.createServer(this.app)
+    this.server = createServer(this.app)
   }
 
   setRoute(path, handlerFunction) {
@@ -149,4 +152,4 @@ function getClientIp(req) {
   )
 }
 
-module.exports.CloudBaseRunServer = ExpressServer
+export const CloudBaseRunServer = ExpressServer

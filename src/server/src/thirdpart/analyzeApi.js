@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios';
 
 /**
  * 获取网站技术信息
@@ -11,6 +11,6 @@ async function getAnalyze(link) {
   return await axios.get(api).then(res => res.data);
 }
 
-module.exports = {
+export {
   getAnalyze
 }

@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 async function getInspire() {
   const api = "https://api.vvhan.com/api/en?type=sj";
@@ -7,6 +7,6 @@ async function getInspire() {
   return q;
 }
 
-module.exports = {
+export {
   getInspire,
 };

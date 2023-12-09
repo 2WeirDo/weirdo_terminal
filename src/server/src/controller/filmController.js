@@ -1,6 +1,6 @@
-const { getFilm } = require('../thirdpart/filmApi')
-const MyError = require('../exception')
-const { THIRD_PART_SERVICE_ERROR_CODE } = require('../exception/errorCode')
+import { getFilm } from '../thirdpart/filmApi.js'
+import MyError from '../exception/index.js'
+import { THIRD_PART_SERVICE_ERROR_CODE } from '../exception/errorCode.js'
 
 async function getFilmApi(event, req, res) {
   const result = await getFilm()
@@ -10,6 +10,6 @@ async function getFilmApi(event, req, res) {
   return result
 }
 
-module.exports = {
+export {
   getFilmApi
 }

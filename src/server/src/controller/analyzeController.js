@@ -1,11 +1,8 @@
 // 请求层 : 接收前端发起的请求, 拿到参数
 // 请求层调用逻辑层的方法或者调用第三方api
-const { getAnalyze } = require('../thirdpart/analyzeApi')
-const MyError = require('../exception')
-const {
-  THIRD_PART_SERVICE_ERROR_CODE,
-  REQUEST_PARAMS_ERROR_CODE
-} = require('../exception/errorCode')
+import { getAnalyze } from '../thirdpart/analyzeApi.js'
+import MyError from '../exception/index.js'
+import { THIRD_PART_SERVICE_ERROR_CODE, REQUEST_PARAMS_ERROR_CODE } from '../exception/errorCode.js'
 
 /**
  * 网站技术分析
@@ -26,6 +23,6 @@ async function getAnalyzeApi(event, req, res) {
   return result
 }
 
-module.exports = {
+export {
   getAnalyzeApi
 }

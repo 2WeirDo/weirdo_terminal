@@ -1,8 +1,8 @@
 // 请求层 : 接收前端发起的请求, 拿到参数
 // 请求层调用逻辑层的方法或者调用第三方api
-const { getInspire } = require('../thirdpart/inspireApi')
-const MyError = require('../exception')
-const { THIRD_PART_SERVICE_ERROR_CODE } = require('../exception/errorCode')
+import { getInspire } from '../thirdpart/inspireApi.js'
+import MyError from '../exception/index.js'
+import { THIRD_PART_SERVICE_ERROR_CODE } from '../exception/errorCode.js'
 
 /**
  * 随机获取励志句子
@@ -19,6 +19,6 @@ async function getRandomInspireApi(event, req, res) {
   return result
 }
 
-module.exports = {
+export {
   getRandomInspireApi
 }

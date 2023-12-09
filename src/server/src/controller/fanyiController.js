@@ -1,9 +1,6 @@
-const { translate } = require('../thirdpart/baiduFanYiApi')
-const MyError = require('../exception')
-const {
-  REQUEST_PARAMS_ERROR_CODE,
-  THIRD_PART_SERVICE_ERROR_CODE
-} = require('../exception/errorCode')
+import { translate } from '../thirdpart/baiduFanYiApi.js'
+import MyError from '../exception/index.js'
+import { REQUEST_PARAMS_ERROR_CODE, THIRD_PART_SERVICE_ERROR_CODE } from '../exception/errorCode.js'
 
 /**
  * 翻译
@@ -26,6 +23,4 @@ async function translateApi(event, req, res) {
   return result
 }
 
-module.exports = {
-  translateApi
-}
+export { translateApi }

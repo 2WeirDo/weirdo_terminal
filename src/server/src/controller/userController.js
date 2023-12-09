@@ -1,6 +1,6 @@
-const MyError = require('../exception')
-const { REQUEST_PARAMS_ERROR_CODE, NO_AUTH_ERROR_CODE } = require('../exception/errorCode')
-const { userLogin, userRegister, getLoginUser } = require('../service/userService')
+import MyError from '../exception/index.js'
+import { REQUEST_PARAMS_ERROR_CODE, NO_AUTH_ERROR_CODE } from '../exception/errorCode.js'
+import { userLogin, userRegister, getLoginUser } from '../service/userService.js'
 
 /**
  * 用户注册
@@ -54,7 +54,7 @@ async function getLoginUserApi(event, req, res) {
   return await getLoginUser(req)
 }
 
-module.exports = {
+export {
   userRegisterApi,
   userLoginApi,
   getLoginUserApi,
