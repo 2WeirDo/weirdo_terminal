@@ -4,7 +4,11 @@
 
 ## 简介
 
-Weirdo-terminal 是一个好看又好玩的 web 终端, 用户可以在单页面通过输入命令快速进行操作, 开发者可以灵活定制新命令。
+Weirdo-terminal 是一个富有趣味性的 web 终端。
+
+它提供了一个简洁的界面，使用户能够在单页面上通过输入命令快速执行各种操作。
+
+同时，开发者还可以根据自己的需求灵活定制新的命令，从而进一步提升用户体验。
 
 > 比如请求知乎热榜信息 
 >
@@ -31,6 +35,11 @@ Weirdo-terminal 是一个好看又好玩的 web 终端, 用户可以在单页面
 > ```
 
 ![image-20231210182842178](https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312101828510.png)
+
+
+
+> 如果想查看更多命令的话, 可以输入 help 查看全局的指令
+
 
 
 
@@ -109,7 +118,7 @@ Weirdo-terminal 是一个好看又好玩的 web 终端, 用户可以在单页面
 
 
 
-> 具体的使用就请小伙伴们自行摸索啦~~~
+> 具体的使用就请小伙伴们自行摸索啦❤~~~
 
 
 
@@ -120,7 +129,10 @@ Weirdo-terminal 是一个好看又好玩的 web 终端, 用户可以在单页面
 主要技术：
 
 - Vue 3
-- Vite 4
+- Vite 4 脚手架
+- pnpm 包管理工具
+- ES Module 模块化规范
+- sass CSS预处理器
 - Ant Design Vue 3 组件库
 - Pinia 2 状态管理
 - TypeScript 类型控制
@@ -148,13 +160,13 @@ Weirdo-terminal 是一个好看又好玩的 web 终端, 用户可以在单页面
 - MySQL
 - Sequelize（ORM 框架）
 - Redis
-- chatgpt
 
 依赖库：
 
 - Axios
 - NeteaseCloudMusicApi
 - md5
+- chatgpt
 
 依赖服务：
 
