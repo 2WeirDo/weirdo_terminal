@@ -13,7 +13,7 @@ const myAxios = axios.create({
   baseURL:
   // @ts-ignore
     process.env.NODE.ENV === 'production'
-      ? 'https://yuindex-server-974538-1256524210.ap-shanghai.run.tcloudbase.com/api'
+      ? 'https://www.weirdo-terminal.com/api'
       : 'http://localhost:7345/api'
 })
 
