@@ -26,7 +26,7 @@ const bingCommand: CommandType = {
   ],
   action(options, terminal) {
     const { _, self } = options
-    const word = _.length > 0 ? _[0] : ''
+    const word = _.length > 0 ? _.join(' ') : ''
     const targetLink = `https://www.bing.com/search?q=${word}`
     if (self) {
       window.location.href = targetLink

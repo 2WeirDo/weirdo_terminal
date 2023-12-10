@@ -31,8 +31,10 @@ const bilibiliCommand: CommandType = {
   collapsible: true,
   action(options, terminal) {
     const { _, self } = options
-    const word = _.length > 0 ? _[0] : ''
-    const targetLink = `https://search.bilibili.com/all?keyword=${word}`
+    // const word = _.length > 0 ? _.join(' ') : ''
+    // const targetLink = `https://search.bilibili.com/all?keyword=${word}`
+    let word = _.length > 0 ? _.join(' ') : ''
+    let targetLink = `https://search.bilibili.com/all?keyword=${word}`
     if (self) {
       window.location.href = targetLink
     } else {

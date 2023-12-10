@@ -34,8 +34,10 @@ const baiduCommand: CommandType = {
   // 这里的options是转换后的options, 别混淆了, 调用是在执行器里面调用的
   action(options, terminal) {
     const { _, self, picture } = options
-    const word = _.length > 0 ? _[0] : ''
+    // const word = _.length > 0 ? _.join(' ') : ''
+    let word = _.length > 0 ? _.join(' ') : ''
     let targetLink = `https://www.baidu.com/s?wd=${word}`
+    // let targetLink = `https://kaifa.baidu.com/searchPage?wd=${word}`
     // 搜索图片
     if (picture) {
       targetLink = `https://image.baidu.com/search/index?tn=baiduimage&word=${word}`
