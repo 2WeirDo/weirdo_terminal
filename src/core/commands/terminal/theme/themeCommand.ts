@@ -32,8 +32,8 @@ const themeCommand: CommandType = {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    let degree = _[0]
-    console.log('degree: ', degree)
+    let degree = _.join(' ')
+    // console.log('degree: ', degree)
     degree = themList[degree]
     if (!degree) {
       terminal.writeTextErrorResult('参数错误')

@@ -33,7 +33,7 @@ const helpCommand: CommandType = {
       return
     }
     // 输出某个命令的帮助
-    const commandName = _[0]
+    const commandName = _.join(' ')
     let commands = commandMap
     // 支持输出子命令的帮助
     if (

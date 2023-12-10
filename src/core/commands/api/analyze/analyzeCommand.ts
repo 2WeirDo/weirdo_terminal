@@ -24,7 +24,7 @@ const analyzeCommand: CommandType = {
       return
     }
     //优先找空间条目
-    let link = _[0]
+    let link = _.join(' ')
     let { getItem } = useSpaceStore()
     const item = getItem(link)
     if (item?.link) {

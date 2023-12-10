@@ -21,7 +21,7 @@ const cdCommand: CommandType = {
       terminal.writeTextErrorResult("参数不足");
       return;
     }
-    const targetDir = _[0];
+    const targetDir = _.join(' ');
     const spaceStore = useSpaceStore();
     const result = spaceStore.updateCurrentDir(targetDir);
     if (result === 1) {

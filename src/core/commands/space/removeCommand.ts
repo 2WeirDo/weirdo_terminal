@@ -38,7 +38,7 @@ const removeCommand: CommandType = {
       terminal.writeTextErrorResult("参数不足");
       return;
     }
-    const deleteKey = _[0];
+    const deleteKey = _.join(' ');
     if (recursive && !force) {
       terminal.writeTextErrorResult("操作失败: 请确认要强制删除");
       return;

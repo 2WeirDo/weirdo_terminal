@@ -25,7 +25,7 @@ const gptCommand: CommandType = {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    let message = _[0]
+    let message = _.join(' ');
 
 
     // bug 这个只能放在action里面

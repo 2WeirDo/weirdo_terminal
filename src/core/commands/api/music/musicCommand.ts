@@ -25,7 +25,7 @@ const musicCommand: CommandType = {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    const name = _[0]
+    const name = _.join(' ')
     const output: ComponentOutputType = {
       type: 'component',
       component: defineAsyncComponent(() => import('./MusicBox.vue')),

@@ -184,7 +184,7 @@ const backColorCommand: CommandType = {
   collapsible: true,
   action(options, terminal) {
     const { _ } = options
-    let url = _[0]
+    let url = _.join(' ')
     if (_.length >= 2 && !lowerCaseColorNames[url]) {
       terminal.writeTextErrorResult('参数不匹配')
     }

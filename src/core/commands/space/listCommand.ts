@@ -29,7 +29,7 @@ const listCommand: CommandType = {
     const { _, recursive } = options
     const { listItems, currentDir } = useSpaceStore()
     // 判断是否传入目录, 否则就list当前目录
-    let dir = _[0] ?? currentDir
+    let dir = _.join(' ') ?? currentDir
     // 通过传入目录和是否递归获取该目录下所有的条目
     const resultList = listItems(dir, recursive)
     terminal.writeTextResult(`目录 ${dir}：`)
