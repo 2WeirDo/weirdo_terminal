@@ -4,11 +4,13 @@
 
 ## 简介
 
-Weirdo-terminal 是一个富有趣味性的 web 终端。
+`Weirdo-terminal` 是一个富有趣味性的 `web` 终端。
 
-它提供了一个简洁的界面，使用户能够在单页面上通过输入命令快速执行各种操作。
+* 它提供了一个简洁的界面，使用户能够在单页面上通过输入命令快速执行各种操作。
 
-同时，开发者还可以根据自己的需求灵活定制新的命令，从而进一步提升用户体验。
+* 同时开发者还可以根据自己的需求灵活定制新的命令，从而进一步提升用户体验。
+
+  
 
 > 比如请求知乎热榜信息 
 >
@@ -50,9 +52,9 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 - 命令历史记录、快速执行历史命令
 - 快捷键
 - 命令输入提示
-- Tab 键补全命令
+- `Tab` 键补全命令
 - 多种格式输出
-- 内置 5 种输出状态
+- 内置 `5` 种输出状态
 - 命令折叠 / 展开
 - 帮助手册自动生成
 - 自定义配置（比如更换背景、提示开关等）
@@ -62,59 +64,58 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 
 > 已支持命令
 
-- date 日期
-- shortcut 查看快捷键
-- goto 网页快速跳转
-- help 查看帮助
-- clear 清屏
-- ikun 小黑子狂欢
-- todo 待办事项
-- copy 复制文本
-- moyu 一些小游戏
-- history 查看执行历史
-- hint 是否输入提示
-- reset 重置终端配置
-- welcome 自定义终端欢迎语
-- fanyi 翻译
-- music 网易云音乐
-- weather 今日天气
-- dujitang 一句毒鸡汤
-- inspire 励志句子
-- film 豆瓣热门电影信息
-- love 一句情话
-- background 更换背景图片
-- varbook 变量命名助手
+- `date` 日期
+- `shortcut` 查看快捷键
+- `goto` 网页快速跳转
+- `help` 查看帮助
+- `clear` 清屏
+- `ikun` 小黑子狂欢
+- `todo` 待办事项
+- `copy` 复制文本
+- `moyu` 一些小游戏
+- `history` 查看执行历史
+- `hint` 是否输入提示
+- `reset` 重置终端配置
+- `welcome` 自定义终端欢迎语
+- `fanyi` 翻译
+- `music` 网易云音乐
+- `weather` 今日天气
+- `dujitang` 一句毒鸡汤
+- `inspire` 励志句子
+- `film` 豆瓣热门电影信息
+- `love` 一句情话
+- `background` 更换背景图片
+- `varbook` 变量命名助手
 - 搜索引擎, 比如
-  - baidu
-  - google
-  - juejin
+  - `baidu`
+  - `google`
+  - `juejin`
   - ...
-- user 用户相关命令, 比如
-  - user login
-  - user register
-  - user logout
-- hot 资讯热榜前10位, 比如:
-  - hot zhihu
-  - hot weibo
+- `user` 用户相关命令, 比如
+  - `user login`
+  - `user register`
+  - `user logout`
+- `hot` 资讯热榜前`10`位, 比如:
+  - `hot zhihu`
+  - `hot weibo`
   - ...
 - 空间管理, 似网站收藏夹
-  - add
-  - remove
-  - show
-  - list
-  - mkdir
-  - cd
-  - move
-  - copy
-- analyze 网站技术分析
-  - analyze baidu.com
-  - analyze 书签名称
-
-- theme 变换主题
-  - theme low
-  - theme mid
-  - theme high
-- gpt chatGPT 3.5
+  - `add`
+  - `remove`
+  - `show`
+  - `list`
+  - `mkdir`
+  - `cd`
+  - `move`
+  - `copy`
+- `analyze` 网站技术分析
+  - `analyze baidu.com`
+  - `analyze 书签名称`
+- `theme` 变换主题
+  - `theme low`
+  - `theme high`
+  - ...
+- `gpt` chatGPT 3.5
 
 
 
@@ -128,25 +129,25 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 
 主要技术：
 
-- Vue 3
-- Vite 4 脚手架
-- pnpm 包管理工具
-- ES Module 模块化规范
-- sass CSS预处理器
-- Ant Design Vue 3 组件库
-- Pinia 2 状态管理
-- TypeScript 类型控制
-- Eslint 代码规范控制
-- Prettier 美化代码
+- `Vue 3`
+- `Vite 4` 脚手架
+- `pnpm` 包管理工具
+- `ES Module` 模块化规范
+- `sass` CSS预处理器
+- `Ant Design Vue 3` 组件库
+- `Pinia 2` 状态管理
+- `TypeScript` 类型控制
+- `Eslint` 代码规范控制
+- `Prettier` 美化代码
 
 依赖库：
 
-- axios: 网络请求
-- dayjs: 时间处理
-- lodash: 工具库
-- getopts: 命令参数解析
-- marked: 内容格式化
-- chatgpt: 官方 ChatGPT API 的 Nodejs 包
+- `axios`: 网络请求
+- `dayjs`: 时间处理
+- `lodash`: 工具库
+- `getopts`: 命令参数解析
+- `marked`: 内容格式化
+- `chatgpt`: 官方 ChatGPT API 的 Nodejs 包
 
 
 
@@ -155,18 +156,18 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 
 主要技术：
 
-- Node.js
-- Express、express-session
-- MySQL
-- Sequelize（ORM 框架）
-- Redis
+- `Node.js`
+- `Express`、`express-session`
+- `MySQL`
+- `Sequelize`（ORM 框架）
+- `Redis`
 
 依赖库：
 
-- Axios
-- NeteaseCloudMusicApi
-- md5
-- chatgpt
+- `Axios`
+- `NeteaseCloudMusicApi`
+- `md5`
+- `chatgpt`
 
 依赖服务：
 
@@ -180,35 +181,35 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 
 ## 目录结构
 
-- public: 公共静态资源 (.ico图标)
-- testgpt: gpt服务测试文件
-- src 
-  - assets 静态资源
-  - components 组件
+- `public`: 公共静态资源 (.ico图标)
+- `testgpt`: gpt服务测试文件
+- `src `
+  - `assets` 静态资源
+  - `components` 组件
     - WeirdoTerminal 终端组件
-  - core 核心
+  - `core` 核心
     - commands 命令集
     - commandRegister 命令注册器
     - commandExecutor 命令执行器
-  - plugins 第三方依赖
-  - router 路由管理
-  - server 后端
-  - store 状态管理
-  - utils 工具函数
-  - views 页面
+  - `plugins` 第三方依赖
+  - `router` 路由管理
+  - `server` 后端
+  - `store `状态管理
+  - `utils` 工具函数
+  - `views` 页面
     - IndexPage 主页
     - NotFound 404
-  - App.vue 主页面
-  - main.ts Vue 主文件
-- .eslintrc.js 代码规范
-- .gitignore git忽略文件
-- .prettierrc.json 代码格式化
-- components.d.ts 自动生成的组件动态引入
-- env.d.ts 环境定义
-- index.html 静态主页
-- package.json 项目管理
-- tsconfig.json TS 配置
-- vite.config.ts 打包工具配置
+  - `App.vue` 主页面
+  - `main.ts` Vue 主文件
+- `.eslintrc.js` 代码规范
+- `.gitignore` git忽略文件
+- `.prettierrc.json` 代码格式化
+- `components.d.ts` 自动生成的组件动态引入
+- `env.d.ts` 环境定义
+- `index.html` 静态主页
+- `package.json` 项目管理
+- `tsconfig.json` TS 配置
+- `vite.config.ts` 打包工具配置
 
 
 
@@ -254,7 +255,7 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
       };
       export const gptConfig = {
         key: '',
-        baseUrl: ''
+        // baseUrl: ''
       };
       ```
 
@@ -290,7 +291,7 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
     cd testgpt && pnpm install
     ```
 
-2. 在 index.js 文件中配置你的 `API Key`
+2. 在 `index.js` 文件中配置你的 `API Key`
 
     ```js
     const api = new ChatGPTAPI({
@@ -298,7 +299,7 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
     })
     ```
 
-3. 运行 index.js 文件
+3. 运行 `index.js` 文件
 
     ```bash
     node index.js
@@ -319,6 +320,10 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 - 命令集：各种不同功能的命令定义和实现
 
 
+
+> 前端架构图
+
+![image-20231210190541147](https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312101905306.png)
 
 
 
@@ -380,10 +385,12 @@ Weirdo-terminal 是一个富有趣味性的 web 终端。
 
 ## 特别鸣谢
 
-该项目灵感来源于 [YuIndex](https://github.com/liyupi/yuindex) 
+该项目灵感来源于
 
-- [@程序员鱼皮](https://github.com/liyupi)
+-  [YuIndex -- 程序员鱼皮](https://github.com/liyupi/yuindex) 
 
 README 写法参考于
 - [YuIndex](https://github.com/liyupi/yuindex)  
 - [gpt-web-terminal](https://github.com/ltyzzzxxx/gpt-web-terminal)
+
+欢迎大家 star 呀 ~~ ⭐⭐
