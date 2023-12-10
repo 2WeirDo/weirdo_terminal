@@ -11,6 +11,7 @@ import { marked } from 'marked'
 interface ChatBoxProps {
   message: string
   memory : any
+  need: boolean
 }
 
 marked.setOptions({
@@ -57,7 +58,7 @@ onMounted(async () => {
   }, 250)
   // 在挂载后执行异步调用
   try {
-    const response:any = await getGptOutput(props.message, props.memory)
+    const response:any = await getGptOutput(props.message, props.memory, props.need)
     clearInterval(loadingInterval)
     res.value = response
   } catch (error) {

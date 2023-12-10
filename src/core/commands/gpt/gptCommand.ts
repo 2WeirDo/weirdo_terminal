@@ -18,21 +18,27 @@ const gptCommand: CommandType = {
       required: true
     }
   ],
-  options: [],
+  options: [
+    {
+      key: 'need',
+      type: 'boolean',
+      desc: '是否需要记忆功能',
+      alias: ['m'],
+      defaultValue: false
+    }
+  ],
   async action(options, terminal) {
-    const { _ } = options
+    const { _, need } = options
     if (_.length < 1) {
       terminal.writeTextErrorResult('参数不足')
       return
     }
-    let message = _.join(' ');
-
+    let message = _.join(' ')
 
     // bug 这个只能放在action里面
     // 在 Vue 组件外使用 Vue 的 store 或者组件实例并不总是可行的，
     // 因为它们需要在 Vue 实例的上下文中运行。这可能导致 store 的一些方法无法正常工作。
     let gptStore = useGptStore()
-
 
     let { memory } = storeToRefs(gptStore)
     const output: ComponentOutputType = {
@@ -41,7 +47,8 @@ const gptCommand: CommandType = {
       component: defineAsyncComponent(() => import('./gptBox.vue')),
       props: {
         message,
-        memory
+        memory,
+        need
       }
     }
     terminal.writeResult(output)

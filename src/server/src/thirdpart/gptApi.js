@@ -5,7 +5,7 @@ import { gptConfig } from '../config/config.js'
  * @return {Promise<*[]>}
  */
 
-async function getGptOutput(message, memory) {
+async function getGptOutput(message, memory, need) {
   if (!message) return null
   let api = new ChatGPTAPI({
     apiBaseUrl: gptConfig.baseUrl,
@@ -27,17 +27,23 @@ async function getGptOutput(message, memory) {
 
   let res
   let parentId = null
-  for (const item of memory) {
-    res = await api.sendMessage(item, {
+  if (!need) {
+    console.log('被优化')
+    res = await api.sendMessage(message)
+    return res.text
+  } else {
+    console.log('未被优化');
+    for (const item of memory) {
+      res = await api.sendMessage(item, {
+        parentMessageId: parentId
+      })
+      parentId = res.id
+    }
+    res = await api.sendMessage(message, {
       parentMessageId: parentId
     })
-    parentId = res.id
+    return res.text
   }
-
-  res = await api.sendMessage(message, {
-    parentMessageId: parentId
-  })
-  return res.text
 }
 
 export { getGptOutput }
