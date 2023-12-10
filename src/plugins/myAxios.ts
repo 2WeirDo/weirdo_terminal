@@ -13,7 +13,7 @@ const myAxios = axios.create({
   baseURL:
   // @ts-ignore
     process.env.NODE.ENV === 'production'
-      ? 'https://www.weirdo-terminal.com/api'
+      ? 'https://express-6y6a-84314-6-1323049144.sh.run.tcloudbase.com'
       : 'http://localhost:7345/api'
 })
 

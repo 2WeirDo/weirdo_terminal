@@ -568,7 +568,7 @@ defineExpose({
   background: rgba(0, 0, 0, 0.7);
 
   /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
-  background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); 
+  // background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); 
   padding: 25px;
   overflow: scroll;
 
