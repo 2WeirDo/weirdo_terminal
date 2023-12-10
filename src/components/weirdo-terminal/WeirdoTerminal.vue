@@ -242,14 +242,12 @@ const prompt = computed(() => {
  * 终端主样式
  */
 const mainStyle = computed(() => {
-  // const { backColor } = configStore
   const fullScreenStyle: StyleValue = {
     position: 'fixed',
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
-    // background: `${backColor}`
+    right: 0,
   }
   return props.fullScreen
     ? fullScreenStyle
@@ -262,7 +260,7 @@ const mainStyle = computed(() => {
  * 终端包装类主样式
  */
 const wrapperStyle = computed(() => {
-  const { background } = configStore
+  const { background, theme } = configStore
   const style = {
     ...mainStyle.value
   }
@@ -271,6 +269,7 @@ const wrapperStyle = computed(() => {
   } else {
     style.background = background
   }
+  style.filter = theme
   return style
 })
 
@@ -560,6 +559,8 @@ defineExpose({
 }
 
 .weirdo_terminal-wrapper {
+  // filter: hue-rotate(90deg);
+  // filter: v-bind('configStore.$state.theme')  !important;
   background: black;
 }
 
@@ -624,5 +625,6 @@ defineExpose({
   color: white;
   font-size: 16px;
   font-family: courier-new, courier, monospace;
+  // font-family: serif;
 }
 </style>

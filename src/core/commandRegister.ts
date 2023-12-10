@@ -27,7 +27,8 @@ import analyzeCommand from './commands/api/analyze/analyzeCommand'
 import inspireCommand from './commands/api/inspire/inspireCommand'
 import filmCommand from './commands/api/film/filmCommand'
 import gptCommand from './commands/gpt/gptCommand'
-
+import varbookCommand from './commands/api/varbook/varbookCommand'
+import themeCommand from './commands/terminal/theme/themeCommand'
 
 
 /**
@@ -62,6 +63,8 @@ const commandList: CommandType[] = [
   inspireCommand,
   filmCommand,
   gptCommand,
+  varbookCommand,
+  themeCommand
 ]
 
 /**

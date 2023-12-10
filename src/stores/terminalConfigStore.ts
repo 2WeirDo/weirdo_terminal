@@ -10,7 +10,8 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     backColor: 'black', // 背景颜色
     background: 'black', // 背景图像
     showHint: true, // 输入提示
-    welcomeTexts: [] as string[] // 终端欢迎语
+    welcomeTexts: [] as string[], // 终端欢迎语
+    theme: 'hue-rotate(0deg)'
   }),
   getters: {},
   // 持久化
@@ -34,6 +35,10 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     setBackground(url: string) {
       if (!url) return
       this.background = url
+    },
+    setTheme(url: string) {
+      if (!url) return
+      this.theme = url
     },
     /**
      * 设置或反转提示
