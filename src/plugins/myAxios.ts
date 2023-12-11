@@ -20,7 +20,7 @@ import axios from 'axios'
 let serverAddress = import.meta.env.VITE_SERVER_ADDRESS
 
 const myAxios = axios.create({
-  baseURL: `http://${serverAddress}/api`
+  baseURL: `https://${serverAddress}/api`
 })
 
 myAxios.defaults.withCredentials = true
