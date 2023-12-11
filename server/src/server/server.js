@@ -54,10 +54,15 @@ class ExpressServer {
 
       // 允许的地址 http://127.0.0.1:9000 这样的格式
       // 检查请求中是否包含 "Origin" 头
-      if (origin) {
-        // 将响应头的允许源设置为与请求源相同，即允许来自相同源的跨域请求。
-        res.setHeader('Access-Control-Allow-Origin', origin)
-      }
+
+      // if (origin) {
+      //   // 将响应头的允许源设置为与请求源相同，即允许来自相同源的跨域请求。
+      //   res.setHeader('Access-Control-Allow-Origin', origin)
+      // }
+
+      // 将响应头的允许源设置为与请求源相同，即允许来自相同源的跨域请求。
+      res.setHeader('Access-Control-Allow-Origin', '*')
+
       // 允许跨域请求的方法
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT')
       // 允许跨域请求 header 携带哪些东西
