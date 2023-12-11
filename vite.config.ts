@@ -25,7 +25,7 @@ export default defineConfig({
       }
     }
   },
-  // bug: 前端无法识别process.env
+  // bug: 前端无法识别process.env, 添加以下define
   define: {
     'process.env': process.env
   }
