@@ -8,6 +8,7 @@ import axios from 'axios'
  * 可以使用// @ts-ignore注释来告诉编译器忽略这些错误或警告，
  */
 
+// update
 // const myAxios = axios.create({
 //   baseURL:
 //   // @ts-ignore
