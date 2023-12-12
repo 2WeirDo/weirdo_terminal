@@ -8,6 +8,7 @@ lerna-debug.log*
 
 # private
 config.js
+config.prod.js
 
 # build
 归档.zip

@@ -9,19 +9,13 @@ import axios from 'axios'
  */
 
 // update
-// const myAxios = axios.create({
-//   baseURL:
-//   // @ts-ignore
-//     process.env.NODE.ENV === 'production'
-//       ? 'https://express-6y6a-84314-6-1323049144.sh.run.tcloudbase.com/api'
-//       : 'http://localhost:7345/api'
-
-// })
-
 let serverAddress = import.meta.env.VITE_SERVER_ADDRESS
-
 const myAxios = axios.create({
-  baseURL: `https://${serverAddress}/api`
+  baseURL:
+  // @ts-ignore
+    process.env.NODE.ENV === 'production'
+      ? `https://${serverAddress}}/api`
+      : 'http://localhost:7345/api'
 })
 
 myAxios.defaults.withCredentials = true

@@ -12,7 +12,7 @@ import logoutCommand from './subCommands/logoutCommand'
 const userCommand: CommandType = {
   func: 'user',
   name: '用户相关指令',
-  desc: 'register / login / logout',
+  desc: 'register / login / logout (数据库连接有问题, 各位不用登录即可)',
   alias: [],
   params: [
     {

@@ -30,12 +30,10 @@ import gptCommand from './commands/gpt/gptCommand'
 import varbookCommand from './commands/api/varbook/varbookCommand'
 import themeCommand from './commands/terminal/theme/themeCommand'
 
-
 /**
  * 命令列表（数组元素顺序会影响 help 命令的展示顺序）
  */
 const commandList: CommandType[] = [
-  ...spaceCommands,
   ...searchCommands,
   dateCommand,
   shortcutCommand,
@@ -64,7 +62,8 @@ const commandList: CommandType[] = [
   filmCommand,
   gptCommand,
   varbookCommand,
-  themeCommand
+  themeCommand,
+  ...spaceCommands
 ]
 
 /**
