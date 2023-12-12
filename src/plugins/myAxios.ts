@@ -9,13 +9,18 @@ import axios from 'axios'
  */
 
 // update
+// let serverAddress = import.meta.env.VITE_SERVER_ADDRESS
+// const myAxios = axios.create({
+//   baseURL:
+//   // @ts-ignore
+//     process.env.NODE.ENV === 'production'
+//       ? `https://${serverAddress}}/api`
+//       : 'http://localhost:7345/api'
+// })
 let serverAddress = import.meta.env.VITE_SERVER_ADDRESS
+
 const myAxios = axios.create({
-  baseURL:
-  // @ts-ignore
-    process.env.NODE.ENV === 'production'
-      ? `https://${serverAddress}}/api`
-      : 'http://localhost:7345/api'
+  baseURL: `https://${serverAddress}/api`
 })
 
 myAxios.defaults.withCredentials = true
