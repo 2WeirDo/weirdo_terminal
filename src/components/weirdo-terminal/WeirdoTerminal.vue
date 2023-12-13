@@ -442,11 +442,13 @@ onMounted(() => {
     //  `<a href="//github.com/2WeirDo/weirdo_terminal" target='_blank' style="color:pink"> GitHub Open Source</a>`
     terminal.writeTextOutput(
       `Welcome to Weirdo_Terminal!` +
-        ' ~~~~~~~~ ' +
+        ' ~~~ ' +
         `Author :  <a href="//2weirdo.github.io/about/" target="_blank" style="color:pink; border-bottom: 1px solid pink">weirdo</a>`
+        + `&nbsp~~&nbsp在输入框中输入正确的命令并触发'回车'键即成功进行一次操作🎆`
     )
-
-    terminal.writeTextOutput(`please input 'help' to enjoy~ 💆‍`)
+    terminal.writeTextOutput(`输入'help'查看所有命令,  输入'shortcut'查看快捷键, 'tab'快速输入, 'clear' 清屏,  'history'查看历史记录, 'bg'切换背景图片(配合'theme'使用体验更佳~)`)
+    terminal.writeTextOutput(`🎮🎮🎮其余命令请各位小伙伴自行探索哦~~`)
+    terminal.writeTextOutput('<br/>')
     terminal.writeTextOutput('<br/>')
   }
 })
