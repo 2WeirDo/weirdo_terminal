@@ -28,13 +28,18 @@ export default defineConfig({
     importToCDN({
       prodUrl: 'https://unpkg.com/{name}@{path}',
       modules: [
-        autoComplete('vue'), // 可以自动加速的
+        // autoComplete('vue'), 
         autoComplete('axios'),
         {
           name: 'ant-design-vue',
           var: 'AntDesignVue',
           path: '3.2.10',
           css: '3.2.10/dist/antd.min.css'
+        },
+        {
+          name: 'vue',
+          var: 'Vue',
+          path: '3.3.4',
         },
         {
           name: 'vue-router',
