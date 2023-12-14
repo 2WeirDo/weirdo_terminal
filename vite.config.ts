@@ -29,18 +29,29 @@ export default defineConfig({
       prodUrl: 'https://unpkg.com/{name}@{path}',
       modules: [
         // autoComplete('vue'), 
-        autoComplete('axios'),
+        // autoComplete('axios'),
+        {
+          name: 'vue',
+          var: 'Vue',
+          path: '3.3.4',
+        },
+        {
+          name: 'vue-demi',
+          var: 'VueDemi',
+          path: `https://unpkg.com/vue-demi@0.13.11`,
+        },
+        {
+            name: 'axios',
+            var: 'Axios',
+            path: '1.6.2',
+        },
         {
           name: 'ant-design-vue',
           var: 'AntDesignVue',
           path: '3.2.10',
           css: '3.2.10/dist/antd.min.css'
         },
-        {
-          name: 'vue',
-          var: 'Vue',
-          path: '3.3.4',
-        },
+
         {
           name: 'vue-router',
           var: 'VueRouter',
