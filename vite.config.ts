@@ -8,10 +8,6 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import compression from 'vite-plugin-compression'
 
 
-// 配置 CDN
-import { autoComplete, Plugin as importToCDN } from "vite-plugin-cdn-import";
-
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -22,46 +18,6 @@ export default defineConfig({
     compression({
       algorithm: 'gzip', // 压缩算法，可选['gzip'，'brotliCompress'，'deflate'，'deflateRaw']
       threshold: 10240, // 如果体积大于10kb阈值，则进行压缩，参数单位为b
-      compressionOptions: { level: 9 }, // 指定gzip压缩级别，默认为9（最高级别）
-    }),
-    importToCDN({
-      prodUrl: 'https://unpkg.com/{name}@{path}',
-      modules: [
-        // autoComplete('vue'), 
-        // autoComplete('axios'),
-        {
-          name: 'vue',
-          var: 'Vue',
-          path: '3.3.4',
-        },
-        {
-          name: 'vue-demi',
-          var: 'VueDemi',
-          path: `https://unpkg.com/vue-demi@0.13.11`,
-        },
-        {
-            name: 'axios',
-            var: 'Axios',
-            path: '1.6.2',
-        },
-        {
-          name: 'ant-design-vue',
-          var: 'AntDesignVue',
-          path: '3.2.10',
-          css: '3.2.10/dist/antd.min.css'
-        },
-
-        {
-          name: 'vue-router',
-          var: 'VueRouter',
-          path: '4.2.5'
-        },
-        {
-          name: 'pinia',
-          var: 'Pinia',
-          path: '2.1.7'
-        }
-      ]
     }),
   ],
   resolve: {
