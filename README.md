@@ -1,5 +1,7 @@
 # Weirdo-terminal
 
+---
+
 
 
 ## 简介
@@ -30,19 +32,27 @@
 
 
 
-> 比如请求gpt服务
+> 比如请求 gpt 服务 (访问不了gpt, 目前建议使用文心一言服务)
 >
 > ```
-> 输入 gpt
+> 输入 gpt 
 > ```
 
 ![image-20231210182842178](https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312101828510.png)
 
+> 请求文心一言模型
+>
+> ```
+> 输入 bot 
+> ```
+
+![image-20231214211826843](https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312142118092.png)
+
+> 如果想查看更多命令的话, 可以输入 help 查看全局的指令 ~~
 
 
-> 如果想查看更多命令的话, 可以输入 help 查看全局的指令
 
-
+---
 
 
 
@@ -116,10 +126,15 @@
   - `theme high`
   - ...
 - `gpt` chatGPT 3.5
+- 文心一言 `ERNIT-Bot`
 
 
 
 > 具体的使用就请小伙伴们自行摸索啦❤~~~
+
+
+
+---
 
 
 
@@ -168,6 +183,7 @@
 - `NeteaseCloudMusicApi`
 - `md5`
 - `chatgpt`
+- 文心一言 `ERNIT-Bot`
 
 依赖服务：
 
@@ -176,6 +192,10 @@
 - 摸鱼命令的实现依赖于 https://haiyong.site/moyu 
 - 网站技术分析命令的实现依赖于 https://api.asilu.com/
 - 其余大部分接口依赖于 韩小韩API
+
+
+
+---
 
 
 
@@ -215,6 +235,9 @@
 
 
 > 接下来让我们快速开启项目吧~~
+
+---
+
 
 
 ## 快速开始
@@ -281,7 +304,13 @@
     help baidu || help hot
     ```
 
-## GPT 网络与配置问题检测
+---
+
+
+
+## AI 服务网络与配置问题检测
+
+> chatGPT
 
 通过 `testgpt`，检测你能否顺利请求到 `ChatGPTAPI`, 确保你网络通畅 且 `API Key`可用
 
@@ -309,6 +338,40 @@
 
 
 
+---
+
+
+
+> 文心一言
+
+通过 testBot , 检测是否能正确请求到文心一言的服务。
+
+1. 进入到testBot文件夹,  填写自己在官网获取到的 API_KEY 和 SECRET_KEY
+
+```javascript
+const API_KEY = ''
+const SECRET_KEY = ''
+const ACCESS_TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token'
+```
+
+2. 在终端输入命令执行
+
+```javascript
+node index.js
+```
+
+> 正确输出以下结果即证明你已经成功访问。
+
+<img src="https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312142126706.png" alt="image-20231214212607670" style="zoom: 67%;" />
+
+
+
+---
+
+
+
+
+
 ## 项目细节
 
 ### 核心
@@ -324,6 +387,8 @@
 > 前端架构图
 
 ![image-20231210190541147](https://weirdo-blog.oss-cn-chengdu.aliyuncs.com/blog/202312101905306.png)
+
+---
 
 
 
@@ -341,6 +406,8 @@
 - 命令历史：记录用户输入的命令结果，使用 Vue 3 Composition API 封装部分逻辑
 - 命令提示：根据用户的输入给出提示，使用 Vue 3 Composition API 独立封装
 
+---
+
 
 
 
@@ -353,6 +420,8 @@
 - 解析器：从输入文本中解析出参数和选项
 - 执行器：执行命令，完成操作
 - 子命令机制：支持递归解析子命令
+
+---
 
 
 
@@ -370,6 +439,8 @@
 
 
 
+---
+
 
 
 ### 开发新命令
@@ -380,6 +451,8 @@
 4. 在 commandRegister 的 commandList 中补充新命令
 
 
+
+---
 
 
 

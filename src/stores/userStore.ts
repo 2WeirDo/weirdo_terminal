@@ -27,7 +27,7 @@ export const useUserStore = defineStore('user', {
       if (res?.code === 0 && res.data) {
         this.loginUser = res.data
       } else {
-        console.warn('未登录或登录失败')
+        // console.warn('未登录或登录失败')
         this.$reset()
       }
     },

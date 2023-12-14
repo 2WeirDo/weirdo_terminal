@@ -109,6 +109,7 @@ import ContentOutput from './ContentOutput.vue'
 import OutputStatusType = WeirdoTerminal.OutputStatusType
 import { useTerminalConfigStore } from '@/stores/terminalConfigStore'
 import { useGptStore } from '@/stores/gptStore'
+import { useBotStore } from '@/stores/botStore'
 import useHint from './hint'
 import UserType = User.UserType
 import { LOCAL_USER } from '../../core/commands/user/userConstant'
@@ -144,6 +145,7 @@ const isRunning = ref(false)
 // 引入终端配置状态
 const configStore = useTerminalConfigStore()
 const gptStore = useGptStore()
+const botStore = useBotStore()
 
 /**
  * 初始命令
@@ -247,7 +249,7 @@ const mainStyle = computed(() => {
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0,
+    right: 0
   }
   return props.fullScreen
     ? fullScreenStyle
@@ -444,11 +446,17 @@ onMounted(() => {
       `Welcome to Weirdo_Terminal!` +
         ' ~~~ ' +
         `Author :  <a href="//2weirdo.github.io/about/" target="_blank" style="color:pink; border-bottom: 1px solid pink">weirdo</a>`
-        + `&nbsp~~&nbsp在输入框中输入正确的命令并触发'回车'键即成功进行一次操作🎆`
     )
-    terminal.writeTextOutput(`输入'help'查看所有命令,  输入'shortcut'查看快捷键, 'tab'快速输入, 'clear' 清屏,  'history'查看历史记录, 'bg'切换背景图片(配合'theme'使用体验更佳~)`)
-    terminal.writeTextOutput(`🎮🎮🎮其余命令请各位小伙伴自行探索哦~~`)
-    terminal.writeTextOutput('<br/>')
+    terminal.writeTextOutput(
+      `🔥输入'help'查看所有命令,  输入'shortcut'查看快捷键, 'tab'快速输入, 'clear' 清屏`
+    )
+    terminal.writeTextOutput(
+      `🔥'history'查看历史记录,  'bot'调用文心一言服务,  'bg'切换背景图片(配合'theme'使用体验更佳~)`
+    )
+    terminal.writeTextOutput(
+      `🎆🎮在输入框中输入正确的命令并触发'回车'键即成功进行一次操作&nbsp~~` +
+        `~&nbsp其余命令请各位小伙伴自行探索哦~~`
+    )
     terminal.writeTextOutput('<br/>')
   }
 })
@@ -570,7 +578,7 @@ defineExpose({
   background: rgba(0, 0, 0, 0.7);
 
   /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
-  // background-image: linear-gradient(to top, #4e435c 0%, #313838 100%); 
+  // background-image: linear-gradient(to top, #4e435c 0%, #313838 100%);
   padding: 25px;
   overflow: scroll;
 

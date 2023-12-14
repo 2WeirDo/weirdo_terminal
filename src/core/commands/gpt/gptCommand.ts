@@ -9,7 +9,7 @@ import { storeToRefs } from 'pinia'
 const gptCommand: CommandType = {
   func: 'gpt',
   name: 'chatGPT 3.5-支持记忆功能',
-  desc: '使用微信云托管部署的, 目前是访问不了的哈',
+  desc: '由于通过微信云托管部署, 用户目前访问不了chatGPT, 建议使用bot命令调用文心一言服务',
   alias: [],
   params: [
     {

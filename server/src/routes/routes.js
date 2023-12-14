@@ -16,6 +16,7 @@ import { getRandomInspireApi } from '../controller/inspireController.js'
 import { getFilmApi } from '../controller/filmController.js'
 import { getGptApi } from '../controller/gptController.js'
 import { getVarbookApi } from '../controller/varbookController.js'
+import { getBotApi } from '../controller/botController.js'
 
 const routes = [
   { path: '/user/register', handler: userRegisterApi },
@@ -32,7 +33,8 @@ const routes = [
   { path: '/inspire/get/random', handler: getRandomInspireApi },
   { path: '/film/get', handler: getFilmApi },
   { path: '/gpt/get', handler: getGptApi },
-  { path: '/varbook/get', handler: getVarbookApi }
+  { path: '/varbook/get', handler: getVarbookApi },
+  { path: '/bot/get', handler: getBotApi }
 ]
 
 export default routes
