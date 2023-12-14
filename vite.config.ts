@@ -7,7 +7,6 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 // 进行 gzip 压缩
 import compression from 'vite-plugin-compression'
 
-// import { visualizer } from 'rollup-plugin-visualizer'
 
 // 配置 CDN
 import { autoComplete, Plugin as importToCDN } from "vite-plugin-cdn-import";
