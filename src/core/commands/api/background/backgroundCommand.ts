@@ -9,6 +9,7 @@ const backgroundCommand: CommandType = {
   func: 'background',
   name: '切换背景图片',
   alias: ['bg'],
+  desc: '壁纸源于wallhaven, 需科学上网访问',
   params: [
     {
       key: 'url',

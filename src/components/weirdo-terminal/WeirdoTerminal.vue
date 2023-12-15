@@ -451,7 +451,7 @@ onMounted(() => {
       `🔥输入'help'查看所有命令,  输入'shortcut'查看快捷键, 'tab'快速输入, 'clear' 清屏`
     )
     terminal.writeTextOutput(
-      `🔥'history'查看历史记录,  'bot'调用文心一言服务,  'bg'切换背景图片(配合'theme'使用体验更佳~)`
+      `🔥'history'查看历史记录,  'bot'调用文心一言服务,  'bg'切换背景图片(需科学上网~))`
     )
     terminal.writeTextOutput(
       `🎆🎮在输入框中输入正确的命令并触发'回车'键即成功进行一次操作&nbsp~~` +
