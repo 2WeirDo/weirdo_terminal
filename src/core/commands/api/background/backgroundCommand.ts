@@ -1,7 +1,6 @@
 import { CommandType } from '../../../command'
 import { useTerminalConfigStore } from '../../../../stores/terminalConfigStore'
 import { getBackground } from './backgroundApi'
-
 /**
  * 切换终端背景
  * @author weirdo
@@ -17,18 +16,36 @@ const backgroundCommand: CommandType = {
       required: false
     }
   ],
-  options: [],
+  options: [
+    {
+      key: 'back',
+      type: 'boolean',
+      desc: '切换回上一张',
+      alias: ['b'],
+      defaultValue: false
+    }
+  ],
   async action(options, terminal) {
-    const { _ } = options
+    const { _, back } = options
     let url = _[0]
     if (_.length > 0) {
       url = _[0]
     }
-    const { setBackground } = useTerminalConfigStore()
+    const { setBackground, setPreBg } = useTerminalConfigStore()
+    const terminalStore = useTerminalConfigStore()
     if (!url) {
       // 随机获取壁纸
-      const res = await getBackground()
-      setBackground(res.data)
+      if (back) {
+        const res = terminalStore.preBg
+        setBackground(res);
+      } else {
+        const res = await getBackground()
+        // const pre = terminalStore.preBg
+        const bg = terminalStore.background
+        // setBackground(res.data)
+        setPreBg(bg);
+        setBackground(res)
+      }
     } else setBackground(url)
     terminal.writeTextSuccessResult('成功更换壁纸')
     // setTimeout(() => {

@@ -11,7 +11,8 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     background: 'black', // 背景图像
     showHint: true, // 输入提示
     welcomeTexts: [] as string[], // 终端欢迎语
-    theme: 'hue-rotate(0deg)'
+    theme: 'hue-rotate(0deg)',
+    preBg: 'https://w.wallhaven.cc/full/n6/wallhaven-n65epw.png'
   }),
   getters: {},
   // 持久化
@@ -35,6 +36,10 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     setBackground(url: string) {
       if (!url) return
       this.background = url
+    },
+    setPreBg(url: string) {
+      if (!url) return
+      this.preBg = url
     },
     setTheme(url: string) {
       if (!url) return
