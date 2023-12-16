@@ -32,26 +32,36 @@ const backgroundCommand: CommandType = {
     if (_.length > 0) {
       url = _[0]
     }
+    if (url && url.length < 5) {
+      terminal.writeTextErrorResult('图片路径输入有误~')
+      return
+    }
     const { setBackground, setPreBg } = useTerminalConfigStore()
     const terminalStore = useTerminalConfigStore()
     if (!url) {
       // 随机获取壁纸
       if (back) {
         const res = terminalStore.preBg
-        setBackground(res);
+        const bg = terminalStore.background
+        if (res === bg) {
+          terminal.writeTextErrorResult('只支持回退一次~')
+          return
+        }
+        setBackground(res)
+        terminal.writeTextSuccessResult('成功回退壁纸')
+        return
       } else {
         const res = await getBackground()
-        // const pre = terminalStore.preBg
         const bg = terminalStore.background
-        // setBackground(res.data)
-        setPreBg(bg);
+        setPreBg(bg)
         setBackground(res)
       }
-    } else setBackground(url)
+    } else {
+      const bg = terminalStore.background
+      setPreBg(bg)
+      setBackground(url)
+    }
     terminal.writeTextSuccessResult('成功更换壁纸')
-    // setTimeout(() => {
-    //   terminal.focusInput()
-    // }, 0)
   }
 }
 

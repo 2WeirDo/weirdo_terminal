@@ -12,7 +12,7 @@ export const useTerminalConfigStore = defineStore('terminalConfig', {
     showHint: true, // 输入提示
     welcomeTexts: [] as string[], // 终端欢迎语
     theme: 'hue-rotate(0deg)',
-    preBg: 'https://w.wallhaven.cc/full/n6/wallhaven-n65epw.png'
+    preBg: ''
   }),
   getters: {},
   // 持久化

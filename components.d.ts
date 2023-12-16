@@ -23,6 +23,7 @@ declare module 'vue' {
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     ATag: typeof import('ant-design-vue/es')['Tag']
+    AUpload: typeof import('ant-design-vue/es')['Upload']
     ContentOutput: typeof import('./src/components/weirdo-terminal/ContentOutput.vue')['default']
     copy: typeof import('./src/components/weirdo-terminal/WeirdoTerminal copy.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

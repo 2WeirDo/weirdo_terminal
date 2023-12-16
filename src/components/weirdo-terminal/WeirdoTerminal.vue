@@ -91,6 +91,21 @@
     <div class="spinner">
       <div class="spinner1"></div>
     </div>
+    <div id="imageContainer">
+      <!-- <form @submit.prevent="uploadImage">
+        <input type="file" ref="imageInput" accept="image/*" />
+        <button type="submit">上传图片</button>
+      </form> -->
+      <form class="file-upload-form" @submit.prevent="uploadImage">
+        <label for="file" class="file-upload-label">
+          <div class="file-upload-design">
+            <div class="browse-button">选择壁纸</div>
+          </div>
+          <input id="file" type="file" ref="imageInput" accept="image/*" />
+          <button class="browse-button" type="submit" style="margin-top: 10px">请上传壁纸</button>
+        </label>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -146,6 +161,31 @@ const isRunning = ref(false)
 const configStore = useTerminalConfigStore()
 const gptStore = useGptStore()
 const botStore = useBotStore()
+
+/**
+ * 上传图片
+ */
+let backgroundImage = ref('') // 初始化背景图片为空
+const imageInput = ref(null) // ref获取文件上传input元素的引用
+const uploadImage = () => {
+  const input: any = imageInput.value
+  if (input.files && input.files[0]) {
+    const reader = new FileReader()
+    reader.onload = (e: any) => {
+      const imageDataURL = e.target.result
+      backgroundImage.value = imageDataURL
+      // configStore.setBackground(backgroundImage.value)
+      // configStore.setPreBg(backgroundImage.value)
+    }
+    reader.readAsDataURL(input.files[0]) // 以DataURL形式读取文件
+  }
+}
+
+// if (backgroundImage.value !== '') {
+//   configStore.setBackground(backgroundImage.value)
+//   backgroundImage.value = ''
+// }
+
 
 /**
  * 初始命令
@@ -266,10 +306,15 @@ const wrapperStyle = computed(() => {
   const style = {
     ...mainStyle.value
   }
+  if (backgroundImage.value !== '') {
+    style.background = `url(${backgroundImage.value})  no-repeat center center/cover`
+    backgroundImage.value = ''
+  } else {
   if (background.startsWith('http')) {
     style.background = `url(${background})  no-repeat center center/cover`
   } else {
     style.background = background
+  }
   }
   style.filter = theme
   return style
@@ -451,11 +496,11 @@ onMounted(() => {
       `🔥输入'help'查看所有命令,  输入'shortcut'查看快捷键, 'tab'快速输入, 'clear' 清屏`
     )
     terminal.writeTextOutput(
-      `🔥'history'查看历史记录,  'bot'调用文心一言服务,  'bg'切换背景图片(配合'theme'更佳哦~')`
+      `🔥'history'查看历史记录,  'bot'调用文心一言服务,  'bg'切换背景图片(配合'theme'使用更佳~)`
     )
     terminal.writeTextOutput(
-      `🎆🎮在输入框中输入正确的命令并触发'回车'键即成功进行一次操作&nbsp~~` +
-        `~&nbsp其余命令请各位小伙伴自行探索哦~~`
+      `🎆🎮在输入框中输入正确的命令并触发'回车'键即成功进行一次操作(命令之间记得添加空格哦)&nbsp~~` +
+        `~&nbsp其余命令请各位小伙伴自行探索~~`
     )
     terminal.writeTextOutput('<br/>')
   }
@@ -478,6 +523,52 @@ defineExpose({
 </script>
 
 <style scoped lang="scss">
+#imageContainer {
+  position: absolute;
+  right: 190px;
+  top: 15px;
+  font-size: 13px;
+  width: 26px;
+  height: 26px;
+
+  .file-upload-form {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .file-upload-label input {
+    display: none;
+  }
+  .file-upload-label {
+    cursor: pointer;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    padding: 6px 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+  }
+  .file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .browse-button {
+    background-color: rgba(50, 38, 50, 0.4);
+    padding: 5px 8px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px black;
+    text-align: center;
+    width: 90px;
+    color: rgb(164, 154, 165);
+    transition: all 0.3s;
+  }
+  .browse-button:hover {
+    transform: scale(1.1);
+  }
+}
+
 .spinner {
   position: absolute;
   z-index: 10;
@@ -575,7 +666,7 @@ defineExpose({
 }
 
 .weirdo_terminal {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
 
   /* bug : 子元素设置了background-image之后, 父元素再设置background为url则无效果 */
   // background-image: linear-gradient(to top, #4e435c 0%, #313838 100%);
