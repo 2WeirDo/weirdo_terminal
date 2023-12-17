@@ -8,6 +8,7 @@ const zhihuCommand: CommandType = {
   func: 'zhihu',
   name: '知乎搜索',
   alias: [],
+  desc: 'zhihu <搜索内容>',
   params: [
     {
       key: 'word',

@@ -9,6 +9,7 @@ const resetCommand: CommandType = {
   func: 'reset',
   name: '重置终端配置',
   alias: [],
+  desc: '包括重置主题, 背景, 欢迎语, 是否开启提示',
   options: [
     {
       key: 'force',

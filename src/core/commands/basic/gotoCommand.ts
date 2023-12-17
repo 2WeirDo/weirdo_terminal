@@ -9,6 +9,7 @@ export default {
   func: 'goto',
   name: '网页跳转',
   alias: ['to', 'open', 'visit', 'jump'],
+  desc: 'goto <目标链接或书签名>',
   params: [
     {
       key: 'link',

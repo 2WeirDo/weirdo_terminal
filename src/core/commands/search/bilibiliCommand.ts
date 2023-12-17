@@ -12,6 +12,7 @@ const bilibiliCommand: CommandType = {
   func: 'bilibili',
   name: 'bilibili 搜索',
   alias: ['bzhan', 'bili'],
+  desc: 'bilibili <搜索内容>',
   params: [
     {
       key: 'word',

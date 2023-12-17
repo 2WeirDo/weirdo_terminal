@@ -8,6 +8,7 @@ const douyinCommand: CommandType = {
   func: 'douyin',
   name: '抖音搜索',
   alias: [],
+  desc: 'douyin <搜索内容>',
   params: [
     {
       key: 'word',

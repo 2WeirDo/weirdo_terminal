@@ -8,6 +8,7 @@ const bingCommand: CommandType = {
   func: 'bing',
   name: '必应搜索',
   alias: [],
+  desc: 'bing <搜索内容>',
   params: [
     {
       key: 'word',

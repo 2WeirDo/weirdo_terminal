@@ -8,6 +8,7 @@ const doubanCommand: CommandType = {
   func: 'douban',
   name: '豆瓣搜索',
   alias: [],
+  desc: 'douban <搜索内容>',
   params: [
     {
       key: 'word',

@@ -9,7 +9,7 @@ import { getHot } from './hotApi'
 const hotCommand: CommandType = {
   func: 'hot',
   name: '资讯热榜前10位',
-  desc: '通过输入平台名称',
+  desc: 'hot zhihu/hupu/baidu/bilibili/history/tieba/webo/douyin/douban/it/...',
   params: [
     {
       key: 'platform',

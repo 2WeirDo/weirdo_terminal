@@ -8,6 +8,7 @@ const githubCommand: CommandType = {
   func: 'github',
   name: 'GitHub 搜索',
   alias: [],
+  desc: 'github <搜索内容>',
   params: [
     {
       key: 'word',

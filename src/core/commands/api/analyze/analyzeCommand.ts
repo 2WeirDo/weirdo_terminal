@@ -9,6 +9,7 @@ const analyzeCommand: CommandType = {
   func: 'analyze',
   name: '网站技术分析',
   alias: ['fenxi'],
+  desc: 'analyze <目标链接或书签名>',
   params: [
     {
       key: 'link',

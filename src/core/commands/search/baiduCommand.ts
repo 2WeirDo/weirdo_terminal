@@ -7,6 +7,7 @@ import { CommandType } from '../../command'
 const baiduCommand: CommandType = {
   func: 'baidu',
   name: '百度搜索',
+  desc: 'baidu <搜索内容>',
   alias: [],
   params: [
     {

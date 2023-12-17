@@ -7,7 +7,8 @@ import { CommandType } from '../../command'
 const StackoverflowCommand: CommandType = {
   func: 'stackoverflow',
   name: 'Stackoverflow搜索',
-  alias: [],
+  desc: 'sf <搜索内容>',
+  alias: ['sf'],
   params: [
     {
       key: 'word',

@@ -72,10 +72,11 @@
       <div style="margin-bottom: 16px" />
     </div>
 
-    <button class="Btn">
+    <button class="Btn" aria-label="Btn">
       <a
         href="https://github.com/2WeirDo/weirdo_terminal"
         target="_blank"
+        aria-label="Read more about my github"
         rel="noopener noreferrer"
       >
         <span class="svgContainer">
@@ -163,29 +164,93 @@ const gptStore = useGptStore()
 const botStore = useBotStore()
 
 /**
- * 上传图片
+ * 上传图片 + 图片压缩
+ * 用js压缩上传的图片
  */
 let backgroundImage = ref('') // 初始化背景图片为空
 const imageInput = ref(null) // ref获取文件上传input元素的引用
+// const uploadImage = () => {
+//   const input: any = imageInput.value
+//   if (input.files && input.files[0]) {
+//     const reader = new FileReader()
+//     reader.readAsDataURL(input.files[0]) // 以DataURL形式读取文件
+//     const WIDTH = 1200 // 压缩后的图片宽度(高度自适应)
+//     const QUALITY = 0.7 // 压缩后的质量(0-1),数值越小,压缩后的图片文件越小,画质越低
+//     reader.onload = async (e: any) => {
+//       let image: any = new Image() // 在内存中新建一个img标签,用来绘制压缩后的图片
+//       image.src = e.target.result
+//       // backgroundImage.value = image.src
+
+//       image.onload = async function () {
+//         let canvas = document.createElement('canvas')
+//         let context: any = canvas.getContext('2d')
+//         let ratio = image.height / image.width // 计算宽高比
+//         canvas.width = WIDTH
+//         canvas.height = WIDTH * ratio
+//         context.drawImage(image, 0, 0, canvas.width, canvas.height)
+//         const result: any = await new Promise((resolve, reject) => {
+//           canvas.toBlob(
+//             (blob) => {
+//               resolve(blob)
+//             },
+//             'image/jpeg',
+//             QUALITY
+//           )
+//         })
+//         console.log(result)
+//         let img_src = URL.createObjectURL(result)
+//         backgroundImage.value = img_src
+//       }
+//     }
+//   }
+// }
 const uploadImage = () => {
   const input: any = imageInput.value
   if (input.files && input.files[0]) {
     const reader = new FileReader()
-    reader.onload = (e: any) => {
-      const imageDataURL = e.target.result
-      backgroundImage.value = imageDataURL
-      // configStore.setBackground(backgroundImage.value)
-      // configStore.setPreBg(backgroundImage.value)
+    reader.readAsDataURL(input.files[0])
+
+    reader.onload = async (e: any) => {
+      try {
+        const image: any = new Image()
+        image.src = e.target.result
+
+        image.onload = async function () {
+          const canvas = document.createElement('canvas')
+          const context: any = canvas.getContext('2d')
+          const ratio = image.height / image.width
+          const WIDTH = 1200
+          const canvasHeight = WIDTH * ratio
+
+          canvas.width = WIDTH
+          canvas.height = canvasHeight
+
+          context.drawImage(image, 0, 0, canvas.width, canvas.height)
+
+          const result: any = await new Promise((resolve, reject) => {
+            canvas.toBlob(
+              (blob) => {
+                resolve(blob)
+              },
+              'image/jpeg',
+              0.7
+            )
+          })
+
+          // 调用 URL.revokeObjectURL 释放通过 URL.createObjectURL 创建的 URL 对象，避免内存泄漏。
+          URL.revokeObjectURL(e.target.result)
+
+          const imgSrc = URL.createObjectURL(result)
+          backgroundImage.value = imgSrc
+        }
+      } catch (error) {
+        // Handle any errors that might occur during image processing
+        console.error('Error processing image:', error)
+        // Provide user feedback about the error, if needed
+      }
     }
-    reader.readAsDataURL(input.files[0]) // 以DataURL形式读取文件
   }
 }
-
-// if (backgroundImage.value !== '') {
-//   configStore.setBackground(backgroundImage.value)
-//   backgroundImage.value = ''
-// }
-
 
 /**
  * 初始命令
@@ -310,11 +375,11 @@ const wrapperStyle = computed(() => {
     style.background = `url(${backgroundImage.value})  no-repeat center center/cover`
     backgroundImage.value = ''
   } else {
-  if (background.startsWith('http')) {
-    style.background = `url(${background})  no-repeat center center/cover`
-  } else {
-    style.background = background
-  }
+    if (background.startsWith('http')) {
+      style.background = `url(${background})  no-repeat center center/cover`
+    } else {
+      style.background = background
+    }
   }
   style.filter = theme
   return style

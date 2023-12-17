@@ -8,6 +8,7 @@ const juejinCommand: CommandType = {
   func: 'juejin',
   name: '掘金搜索',
   alias: [],
+  desc: 'juejin <搜索内容>',
   params: [
     {
       key: 'word',

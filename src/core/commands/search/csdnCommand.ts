@@ -8,6 +8,7 @@ const csdnCommand: CommandType = {
   func: 'csdn',
   name: 'csdn搜索',
   alias: [],
+  desc: 'csdn <搜索内容>',
   params: [
     {
       key: 'word',

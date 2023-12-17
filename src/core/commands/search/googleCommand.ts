@@ -8,6 +8,7 @@ const googleCommand: CommandType = {
   func: 'google',
   name: 'Google 搜索',
   alias: [],
+  desc: 'google <搜索内容>',
   params: [
     {
       key: 'word',

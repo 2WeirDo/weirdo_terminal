@@ -4,6 +4,7 @@ const mdnCommand: CommandType = {
   func: 'mdn',
   name: 'MozillaMDN',
   alias: ['mdn', 'mozillamdn'],
+  desc: 'mdn <搜索内容>',
   params: [
     {
       key: 'word',

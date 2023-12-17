@@ -11,6 +11,7 @@ const youtubeCommand: CommandType = {
   func: 'youtube',
   name: 'youtube 搜索',
   alias: ['ytube'],
+  desc: 'ytube <搜索内容>',
   params: [
     {
       key: 'word',
