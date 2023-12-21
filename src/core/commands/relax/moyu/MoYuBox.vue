@@ -37,7 +37,7 @@ if (props.back) {
   currentGame = moyuStore.preGame
 } else {
   currentGame = gameList[Math.floor(Math.random() * gameList.length)]
-  moyuStore.setPreGame(moyuStore.preGame)
+  moyuStore.setPreGame(currentGame)
 }
 
 </script>

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useMoyuStore = defineStore('moyuConfig', {
   state: () => ({
-    preGame: '',
+    preGame: 'https://haiyong.site/moyu/wzq-2/',
   }),
   getters: {},
   // 持久化
