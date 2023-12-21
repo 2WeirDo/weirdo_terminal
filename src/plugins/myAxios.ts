@@ -8,18 +8,14 @@ import axios from 'axios'
  * 可以使用// @ts-ignore注释来告诉编译器忽略这些错误或警告
  */
 
-// update
 let serverAddress = import.meta.env.VITE_SERVER_ADDRESS
 
-let baseURL = serverAddress ? `https://${serverAddress}}/api` : `http://localhost:7345/api`
+// let baseURL = 'http://localhost:7345/api'; // 开发环境
+let baseURL = `https://${serverAddress}/api` // 生产环境
 const myAxios = axios.create({
-  // 'http://localhost:7345/api'
-  baseURL: baseURL
+  baseURL
 })
 
-// const myAxios = axios.create({
-//   baseURL: `https://${serverAddress}/api`
-// })
 
 myAxios.defaults.withCredentials = true
 
