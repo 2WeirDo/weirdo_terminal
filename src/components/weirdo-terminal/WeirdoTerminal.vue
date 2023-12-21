@@ -291,9 +291,11 @@ const doSubmitCommand = async () => {
   if (inputText.startsWith('!')) {
     const commandIndex = Number(inputText.substring(1))
     // 根据序号拿到这条命令
+    // command
     const command = commandList.value[commandIndex - 1]
     if (command) {
-      inputText = command.text
+      // 注意 : 这个command不是我们封装命令对象, 只是包含一个text命令名字而已
+      inputText = command.text // 拿到命令
     }
   }
   // 执行命令

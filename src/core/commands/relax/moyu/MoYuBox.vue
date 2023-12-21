@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+import { useMoyuStore } from './moyuStore'
 const gameList = [
   'https://haiyong.site/moyu/shitoujiandaobu/',
   'https://haiyong.site/moyu/lion.html',
@@ -17,10 +18,28 @@ const gameList = [
   'https://haiyong.site/moyu/tiaofangzi.html',
   'https://haiyong.site/moyu/SpaceHuggers/',
   'https://haiyong.site/moyu/wzq-2/',
-  'https://haiyong.site/moyu/2048/'
-]
+  'https://haiyong.site/moyu/wzq-2/',
+  'https://haiyong.site/moyu/wzq-2/',
+  'https://haiyong.site/moyu/wzq-2/',
+  'https://haiyong.site/moyu/wzq-2/',
+  'https://haiyong.site/moyu/wzq-2/',
+  'https://haiyong.site/moyu/2048/',
+  'https://haiyong.site/moyu/taiqiu/',
 
-const currentGame = gameList[Math.floor(Math.random() * gameList.length)]
+]
+let moyuStore = useMoyuStore()
+interface MoyuBoxProps {
+  back: boolean
+}
+let props = defineProps<MoyuBoxProps>()
+let currentGame: any
+if (props.back) {
+  currentGame = moyuStore.preGame
+} else {
+  currentGame = gameList[Math.floor(Math.random() * gameList.length)]
+  moyuStore.setPreGame(moyuStore.preGame)
+}
+
 </script>
 
 <style scoped lang="scss">

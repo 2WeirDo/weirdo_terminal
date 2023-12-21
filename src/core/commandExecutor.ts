@@ -4,6 +4,7 @@ import getopts, { ParsedOptions } from 'getopts'
 import { commandMap } from './commandRegister'
 import { CommandOptionType, CommandType } from './command'
 import TerminalType = WeirdoTerminal.TerminalType
+import helpCommand from '../core/commands/terminal/help/helpCommand'
 
 /**
  * 执行命令
@@ -34,20 +35,18 @@ export const doCommandExecute = async (
   // 将参数都放到 _ 里,比如{ _: [abc, def]}
   // 而像 -n, -l这种就是选项 { n: "唯多" l: "www.baidu,com" }
   const { _ } = parsedOptions
-  // 有子命令，执行
   // 子父命令如何做 : 考虑递归即可
   if (_.length > 0 && command.subCommands && Object.keys(command.subCommands).length > 0) {
     // 把子命令当做新命令解析，user login xxx => login xxx
     const subText = text.substring(text.indexOf(' ') + 1)
 
-    // 注意这个函数doCommanExecute, 可选传入第三个参数(父命令)
-    // 比如 user login : 这里的第三个参数传递的就是父级命令 (user)
+    // 注意这个函数doCommanExecute, 可选传入第三个参数(父命令对象)
+    // 比如 user login : 这里的第三个参数传递的就是父命令对象 (user)
     // 目的❗: 也就是说拿到父命令集下的子命令对象
-    await doCommandExecute(subText, terminal, command)
-    return
+    await doCommandExecute(subText, terminal, command) // subText是子命令
+    return // 不return的话就会执行两次doAction, 还会执行父命令的action, 是没用的
   }
-  // 执行命令, 调用命令的相关行为函数action (如果有子命令则这是第二次进入函数, 然后执行)
-  // 如果有子命令, 这里的command就是子命令对象
+  // 执行命令, 调用命令的相关行为函数action (如果有子命令则只执行子命令的action)
   await doAction(command, parsedOptions, terminal, parentCommand)
 }
 
@@ -86,13 +85,6 @@ const getCommand = (text: string, parentCommand?: CommandType): CommandType => {
     key: "self",
     desc: "是否当前页面打开",
     alias: ["s"],
-    type: "boolean",
-    defaultValue: false,
-  },
-  {
-    key: "picture",
-    desc: "是否搜索图片",
-    alias: ["p"],
     type: "boolean",
     defaultValue: false,
   },
@@ -146,7 +138,13 @@ const doAction = async (
     terminal.setCommandCollapsible(true)
   }
 
-  // todo => help指令
+  if (help) {
+    // 如果有help那就不执行本来的命令
+    // 执行帮助命令
+    const newOptions = { ...options, _: [command.func] }
+    helpCommand.action(newOptions, terminal, parentCommand)
+    return
+  }
 
   // 调用命令的action方法, 我们每个命令都单独定义了一个怎么处理这个命令的方法 即action
   // 所以这个命令要做什么事情是跟解析器无关的, 只跟命令本身有关

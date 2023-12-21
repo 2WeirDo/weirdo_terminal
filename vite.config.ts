@@ -7,6 +7,7 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 // 进行 gzip 压缩
 import compression from 'vite-plugin-compression'
 
+// import postCssPxToRem from 'postcss-pxtorem'  // PC端适配
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,8 +18,8 @@ export default defineConfig({
     }),
     compression({
       algorithm: 'gzip', // 压缩算法，可选['gzip'，'brotliCompress'，'deflate'，'deflateRaw']
-      threshold: 10240, // 如果体积大于10kb阈值，则进行压缩，参数单位为b
-    }),
+      threshold: 10240 // 如果体积大于10kb阈值，则进行压缩，参数单位为b
+    })
   ],
   resolve: {
     alias: {
@@ -30,7 +31,15 @@ export default defineConfig({
       scss: {
         additionalData: `@import "@/assets/base.scss";`
       }
-    }
+    },
+    // postcss: {
+    //   plugins: [
+    //     postCssPxToRem({
+    //       rootValue: 149,
+    //       propList: ['*']
+    //     })
+    //   ]
+    // }
   },
   // bug: 前端无法识别process.env, 添加以下define
   define: {

@@ -22,6 +22,7 @@ export const registerShortcuts = (terminal: TerminalType) => {
     // 然后如果按的是类似于ctrl, 就继续匹配
     // 继续按, 因为ctrl没有时 => code 为 ControlLeft, 下面没有匹配的
     // 所以要按 ctrl + 某个值, 这样就有匹配的 code 了。
+    // 先按ctrl就可以继续匹配, 光按L是会进入上面的if聚集然后return的
 
     // 匹配快捷键
     let code = e.code

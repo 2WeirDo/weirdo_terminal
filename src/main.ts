@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from './router'
+// import 'amfe-flexible'
 
 const app = createApp(App)
 app.config.warnHandler = (msg, vm, trace) => {

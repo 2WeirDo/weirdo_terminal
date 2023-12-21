@@ -79,7 +79,7 @@ const commandMap: Record<string, CommandType> = {}
 
 commandList.forEach((command) => {
   commandMap[command.func] = command // func是某个command命令的名称
-  command.alias?.forEach((name) => {
+  command.alias?.forEach((name) => { // 为别名也进行创建
     commandMap[name] = command
   })
 })

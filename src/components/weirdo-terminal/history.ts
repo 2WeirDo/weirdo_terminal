@@ -10,6 +10,7 @@ import CommandInputType = WeirdoTerminal.CommandInputType
  */
 const useHistory = (commandList: CommandOutputType[], inputCommand: Ref<CommandInputType>) => {
   // 记录一下当前命令的位置
+  // commandList: 已经输入过的命令的列表
   const commandHistoryPos = ref(commandList.length)
 
   const listCommandHistory = () => {

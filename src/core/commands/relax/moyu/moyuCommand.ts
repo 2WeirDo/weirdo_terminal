@@ -10,14 +10,23 @@ const moyuCommand: CommandType = {
   func: 'moyu',
   name: '摸鱼',
   desc: '一些小游戏',
-  options: [],
+  options: [
+    {
+      key: 'back',
+      type: 'boolean',
+      desc: '重新进行上一个游戏',
+      alias: ['b'],
+      defaultValue: false
+    }
+  ],
   collapsible: true,
   action(options, terminal) {
+    const { back } = options
     const output: ComponentOutputType = {
       type: 'component',
       // @ts-ignore
       component: defineAsyncComponent(() => import('./MoYuBox.vue')),
-      props: {}
+      props: { back }
     }
     terminal.writeResult(output)
   }
