@@ -10,6 +10,7 @@ let themList: any = {
   mid2: 'hue-rotate(240deg)',
   low2: 'hue-rotate(300deg)',
   normal: 'hue-rotate(360deg)',
+  dark: 'invert(1) hue-rotate(180deg) brightness(0.7)'
   // good: 'drop-shadow(0px 0px 20px red) invert(15%)'
 }
 
@@ -21,7 +22,7 @@ const themeCommand: CommandType = {
   params: [
     {
       key: 'degree',
-      desc: '变化程度(normal/low1/low2/mid1/mid2/high)', // 90 / 180 / 270
+      desc: '变化程度(normal/low1/low2/mid1/mid2/high/dark)', // 90 / 180 / 270
       required: true
     }
   ],
