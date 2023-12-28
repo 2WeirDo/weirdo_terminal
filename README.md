@@ -287,19 +287,25 @@
       };
       ```
 
-4.   运行前端
+4.   在 `scr/plugins/myAxios` 中, 修改 `baseURL`
+
+     ```javascript
+     let baseURL = 'http://localhost:7345/api'; // 开发环境
+     ```
+
+5.   运行前端
 
      ```bash
      pnpm run dev
      ```
 
-5.   运行后端
+6.   运行后端
 
      ```bash
      cd server && pnpm start:dev
      ```
 
-6.  快速解锁命令用法 - 命令行中使用`help`命令查询使用方法
+7.  快速解锁命令用法 - 命令行中使用`help`命令查询使用方法
 
     ```bash
     # 查询全部命令帮助
@@ -326,6 +332,8 @@
     ```
 
 2. 在 `index.js` 文件中配置你的 `API Key`
+
+    > 注意 :  需要一个有额度的 API key 哦~~
 
     ```js
     const api = new ChatGPTAPI({
