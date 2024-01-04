@@ -9,7 +9,7 @@ const backgroundCommand: CommandType = {
   func: 'background',
   name: '切换背景图片',
   alias: ['bg'],
-  desc: '壁纸源于wallhaven, 需科学上网访问',
+  desc: '有时候可能会加载不出来~~',
   params: [
     {
       key: 'url',
@@ -51,7 +51,8 @@ const backgroundCommand: CommandType = {
         terminal.writeTextSuccessResult('成功回退壁纸')
         return
       } else {
-        const res = await getBackground()
+        let res:any = await getBackground()
+        res = res.data
         const bg = terminalStore.background
         setPreBg(bg)
         setBackground(res)

@@ -176,7 +176,7 @@ const backColorCommand: CommandType = {
   params: [
     {
       key: 'color',
-      desc: '英文颜色名(不填则随机)',
+      desc: '英文颜色名(全小写, 不填则随机)',
       required: false
     }
   ],

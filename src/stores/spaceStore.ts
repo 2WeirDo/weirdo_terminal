@@ -52,7 +52,7 @@ export const useSpaceStore = defineStore("space", {
       } else {
         // 否则就拿到dir的完整路径
         dir = getFullPath(this.currentDir, dir);
-        console.log("dir", dir);
+        // console.log("dir", dir);
       }
       const resultList: SpaceItemType[] = [];
 

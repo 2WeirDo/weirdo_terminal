@@ -5,6 +5,7 @@ const API_KEY = botConfig.API_KEY
 const SECRET_KEY = botConfig.SECRET_KEY
 const ACCESS_TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token'
 
+// bug
 // 获取 access token
 async function fetchAccessToken() {
   const accessTokenRes = await axios.post(ACCESS_TOKEN_URL, null, {
@@ -29,6 +30,7 @@ async function getAccessToken() {
   if (accessToken.value && Date.now() < accessToken.expiredTime) {
     return accessToken.value
   }
+  // 过期 -- 需要重新请求
   const token = await fetchAccessToken()
   accessToken = {
     expiredTime: Date.now() + 29 * 86400 * 1000, // 29 days

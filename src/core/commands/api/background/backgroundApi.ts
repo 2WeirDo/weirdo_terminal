@@ -1,7 +1,17 @@
-// import myAxios from '@/plugins/myAxios'
+import myAxios from '@/plugins/myAxios'
+
+export const getBackground = async () => {
+  return await myAxios.post('/background/get/random')
+}
+
 
 // export const getBackground = async () => {
-//   return await myAxios.post('/background/get/random')
+//   let res
+//   let pre
+//   res = pictures[Math.floor(Math.random() * pictures.length)]
+//   while (pre === res) res = pictures[Math.floor(Math.random() * pictures.length)]
+//   pre = res
+//   return res
 // }
 
 // let pictures1 = [
@@ -112,73 +122,65 @@
 //   'https://w.wallhaven.cc/full/kw/wallhaven-kwp5km.png'
 // ]
 
-let pictures = [
-  'https://c.53326.com/d/file/lan20191115/xyxwwalhb3k.jpg',
-  'https://c.53326.com/d/file/lan20211231/xc1ybtewpms.jpg',
-  'https://c.53326.com/d/file/lan20191114/1djnz3cdry5.jpg',
-  'https://c.53326.com/d/file/lan20221010/e3fn5bjsotp.jpg',
-  'https://c.53326.com/d/file/lan20221010/kd5liru0jmq.jpg',
-  'https://c.53326.com/d/file/lan20221010/brnq2iuyd44.jpg',
-  'https://c.53326.com/d/file/lan20221010/jio2dqfmmlx.jpg',
-  'https://c.53326.com/d/file/lan20221010/lrf3kwo5fv5.jpg',
-  'https://c.53326.com/d/file/lan20221010/zo43c2eiwvt.jpg',
-  'https://c.53326.com/d/file/lan20221010/ljcv0qmwe2f.jpg',
-  'https://c.53326.com/d/file/lan20221010/bjw0kvzfa2j.jpg',
-  'https://c.53326.com/d/file/lan20221010/xuxfsnngrk5.jpg',
-  'https://c.53326.com/d/file/lan20221010/anpmcbh5pmk.jpg',
-  'https://c.53326.com/d/file/lan20221010/wchbscj1fd3.jpg',
-  'https://c.53326.com/d/file/lan20221010/ddgjljg4da3.jpg',
-  'https://c.53326.com/d/file/lan20221010/s4kt1d14dvm.jpg',
-  'https://c.53326.com/d/file/lan20221010/tbbt3uluh0g.jpg',
-  'https://c.53326.com/d/file/lan20221010/c3rytxcgan1.jpg',
-  'https://c.53326.com/d/file/lan20221010/rg3uly0gicv.jpg',
-  'https://c.53326.com/d/file/lan20221010/v5u1ut2e1pa.jpg',
-  'https://c.53326.com/d/file/lan20221010/qnupkanzuf2.jpg',
-  'https://c.53326.com/d/file/lan20211231/cd0incdjx1o.jpg',
-  'https://c.53326.com/d/file/lan20211231/ddgrewv15we.jpg',
-  'https://c.53326.com/d/file/lan20211231/rhw5xihrld3.jpg',
-  'https://c.53326.com/d/file/lan20211231/ysjvpaudekn.jpg',
-  'https://c.53326.com/d/file/lan20221010/3gsppcvns34.jpg',
-  'https://c.53326.com/d/file/lan20221010/p5hwe3nolb0.jpg',
-  'https://c.53326.com/d/file/lan20221010/pa1tuxqk0ue.jpg',
-  'https://c.53326.com/d/file/lan20221010/jsciyfhk21i.jpg',
-  'https://c.53326.com/d/file/lan20221010/v5agd5zistf.jpg',
-  'https://c.53326.com/d/file/lan20221010/r5y44gsui4n.jpg',
-  'https://c.53326.com/d/file/lan20221010/y3ajpxftyjc.jpg',
-  'https://c.53326.com/d/file/lan20221010/xhyz3xun4cs.jpg',
-  'https://c.53326.com/d/file/lan20221010/3kfxpjkax3q.jpg',
-  'https://c.53326.com/d/file/lan20221010/cycbvsglf2f.jpg',
-  'https://c.53326.com/d/file/lan20221010/f4y1ibrrgyp.jpg',
-  'https://c.53326.com/d/file/lan20221010/iu1l2typujw.jpg',
-  'https://c.53326.com/d/file/lan20221010/hcfdqehe5bp.jpg',
-  'https://c.53326.com/d/file/lan20221010/ovct1qslj0c.jpg',
-  'https://c.53326.com/d/file/lan20221010/w2rvtunluyj.jpg',
-  'https://c.53326.com/d/file/lan20221010/zwzfuk5jp2f.jpg',
-  'https://c.53326.com/d/file/lan20221010/w13efm00h0v.jpg',
-  'https://c.53326.com/d/file/lan20221010/aojy3zbmmp2.jpg',
-  'https://c.53326.com/d/file/lan20221010/elujrh3wyl3.jpg',
-  'https://c.53326.com/d/file/lan20221010/ftspzz4hmrm.jpg',
-  'https://c.53326.com/d/file/lan20221010/xaewpx2vckt.jpg',
-  'https://c.53326.com/d/file/lan20221010/zw5testuopc.jpg',
-  'https://c.53326.com/d/file/lan20221010/pnmod4gwihz.jpg',
-  'https://c.53326.com/d/file/lan20221010/10cn5vpxl0v.jpg',
-  'https://c.53326.com/d/file/lan20221010/2iy0keqli50.jpg',
-  'https://c.53326.com/d/file/lan20221010/200t1iffmva.jpg',
-  'https://c.53326.com/d/file/lan20211231/qn4vloy0at3.jpg',
-  'https://c.53326.com/d/file/lan20221010/yuvgxoxisns.jpg',
-  'https://c.53326.com/d/file/lan20221010/erieljwp13b.jpg',
-  'https://c.53326.com/d/file/lan20221010/btsox2ivzc3.jpg',
-  'https://c.53326.com/d/file/lan20221010/h2ohg4jsvvf.jpg',
-  'https://c.53326.com/d/file/lan20221010/b0ci1sfofpz.jpg',
-  'https://c.53326.com/d/file/lan20221010/wuxftachyh4.jpg',
-  'https://c.53326.com/d/file/lan20221010/zwzfuk5jp2f.jpg',
-]
+// let pictures = [
+//   'https://c.53326.com/d/file/lan20191115/xyxwwalhb3k.jpg',
+//   'https://c.53326.com/d/file/lan20211231/xc1ybtewpms.jpg',
+//   'https://c.53326.com/d/file/lan20191114/1djnz3cdry5.jpg',
+//   'https://c.53326.com/d/file/lan20221010/e3fn5bjsotp.jpg',
+//   'https://c.53326.com/d/file/lan20221010/kd5liru0jmq.jpg',
+//   'https://c.53326.com/d/file/lan20221010/brnq2iuyd44.jpg',
+//   'https://c.53326.com/d/file/lan20221010/jio2dqfmmlx.jpg',
+//   'https://c.53326.com/d/file/lan20221010/lrf3kwo5fv5.jpg',
+//   'https://c.53326.com/d/file/lan20221010/zo43c2eiwvt.jpg',
+//   'https://c.53326.com/d/file/lan20221010/ljcv0qmwe2f.jpg',
+//   'https://c.53326.com/d/file/lan20221010/bjw0kvzfa2j.jpg',
+//   'https://c.53326.com/d/file/lan20221010/xuxfsnngrk5.jpg',
+//   'https://c.53326.com/d/file/lan20221010/anpmcbh5pmk.jpg',
+//   'https://c.53326.com/d/file/lan20221010/wchbscj1fd3.jpg',
+//   'https://c.53326.com/d/file/lan20221010/ddgjljg4da3.jpg',
+//   'https://c.53326.com/d/file/lan20221010/s4kt1d14dvm.jpg',
+//   'https://c.53326.com/d/file/lan20221010/tbbt3uluh0g.jpg',
+//   'https://c.53326.com/d/file/lan20221010/c3rytxcgan1.jpg',
+//   'https://c.53326.com/d/file/lan20221010/rg3uly0gicv.jpg',
+//   'https://c.53326.com/d/file/lan20221010/v5u1ut2e1pa.jpg',
+//   'https://c.53326.com/d/file/lan20221010/qnupkanzuf2.jpg',
+//   'https://c.53326.com/d/file/lan20211231/cd0incdjx1o.jpg',
+//   'https://c.53326.com/d/file/lan20211231/ddgrewv15we.jpg',
+//   'https://c.53326.com/d/file/lan20211231/rhw5xihrld3.jpg',
+//   'https://c.53326.com/d/file/lan20211231/ysjvpaudekn.jpg',
+//   'https://c.53326.com/d/file/lan20221010/3gsppcvns34.jpg',
+//   'https://c.53326.com/d/file/lan20221010/p5hwe3nolb0.jpg',
+//   'https://c.53326.com/d/file/lan20221010/pa1tuxqk0ue.jpg',
+//   'https://c.53326.com/d/file/lan20221010/jsciyfhk21i.jpg',
+//   'https://c.53326.com/d/file/lan20221010/v5agd5zistf.jpg',
+//   'https://c.53326.com/d/file/lan20221010/r5y44gsui4n.jpg',
+//   'https://c.53326.com/d/file/lan20221010/y3ajpxftyjc.jpg',
+//   'https://c.53326.com/d/file/lan20221010/xhyz3xun4cs.jpg',
+//   'https://c.53326.com/d/file/lan20221010/3kfxpjkax3q.jpg',
+//   'https://c.53326.com/d/file/lan20221010/cycbvsglf2f.jpg',
+//   'https://c.53326.com/d/file/lan20221010/f4y1ibrrgyp.jpg',
+//   'https://c.53326.com/d/file/lan20221010/iu1l2typujw.jpg',
+//   'https://c.53326.com/d/file/lan20221010/hcfdqehe5bp.jpg',
+//   'https://c.53326.com/d/file/lan20221010/ovct1qslj0c.jpg',
+//   'https://c.53326.com/d/file/lan20221010/w2rvtunluyj.jpg',
+//   'https://c.53326.com/d/file/lan20221010/zwzfuk5jp2f.jpg',
+//   'https://c.53326.com/d/file/lan20221010/w13efm00h0v.jpg',
+//   'https://c.53326.com/d/file/lan20221010/aojy3zbmmp2.jpg',
+//   'https://c.53326.com/d/file/lan20221010/elujrh3wyl3.jpg',
+//   'https://c.53326.com/d/file/lan20221010/ftspzz4hmrm.jpg',
+//   'https://c.53326.com/d/file/lan20221010/xaewpx2vckt.jpg',
+//   'https://c.53326.com/d/file/lan20221010/zw5testuopc.jpg',
+//   'https://c.53326.com/d/file/lan20221010/pnmod4gwihz.jpg',
+//   'https://c.53326.com/d/file/lan20221010/10cn5vpxl0v.jpg',
+//   'https://c.53326.com/d/file/lan20221010/2iy0keqli50.jpg',
+//   'https://c.53326.com/d/file/lan20221010/200t1iffmva.jpg',
+//   'https://c.53326.com/d/file/lan20211231/qn4vloy0at3.jpg',
+//   'https://c.53326.com/d/file/lan20221010/yuvgxoxisns.jpg',
+//   'https://c.53326.com/d/file/lan20221010/erieljwp13b.jpg',
+//   'https://c.53326.com/d/file/lan20221010/btsox2ivzc3.jpg',
+//   'https://c.53326.com/d/file/lan20221010/h2ohg4jsvvf.jpg',
+//   'https://c.53326.com/d/file/lan20221010/b0ci1sfofpz.jpg',
+//   'https://c.53326.com/d/file/lan20221010/wuxftachyh4.jpg',
+//   'https://c.53326.com/d/file/lan20221010/zwzfuk5jp2f.jpg',
+// ]
 
-export const getBackground = async () => {
-  let res
-  let pre
-  res = pictures[Math.floor(Math.random() * pictures.length)]
-  while (pre === res) res = pictures[Math.floor(Math.random() * pictures.length)]
-  pre = res
-  return res
-}

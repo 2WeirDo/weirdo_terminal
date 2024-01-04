@@ -169,52 +169,20 @@ const botStore = useBotStore()
  */
 let backgroundImage = ref('') // 初始化背景图片为空
 const imageInput = ref(null) // ref获取文件上传input元素的引用
-// const uploadImage = () => {
-//   const input: any = imageInput.value
-//   if (input.files && input.files[0]) {
-//     const reader = new FileReader()
-//     reader.readAsDataURL(input.files[0]) // 以DataURL形式读取文件
-//     const WIDTH = 1200 // 压缩后的图片宽度(高度自适应)
-//     const QUALITY = 0.7 // 压缩后的质量(0-1),数值越小,压缩后的图片文件越小,画质越低
-//     reader.onload = async (e: any) => {
-//       let image: any = new Image() // 在内存中新建一个img标签,用来绘制压缩后的图片
-//       image.src = e.target.result
-//       // backgroundImage.value = image.src
-
-//       image.onload = async function () {
-//         let canvas = document.createElement('canvas')
-//         let context: any = canvas.getContext('2d')
-//         let ratio = image.height / image.width // 计算宽高比
-//         canvas.width = WIDTH
-//         canvas.height = WIDTH * ratio
-//         context.drawImage(image, 0, 0, canvas.width, canvas.height)
-//         const result: any = await new Promise((resolve, reject) => {
-//           canvas.toBlob(
-//             (blob) => {
-//               resolve(blob)
-//             },
-//             'image/jpeg',
-//             QUALITY
-//           )
-//         })
-//         console.log(result)
-//         let img_src = URL.createObjectURL(result)
-//         backgroundImage.value = img_src
-//       }
-//     }
-//   }
-// }
 const uploadImage = () => {
-  const input: any = imageInput.value
+  const input: any = imageInput.value // 通过 imageInput.value 获取文件上传的 input 元素。
   if (input.files && input.files[0]) {
-    const reader = new FileReader()
-    reader.readAsDataURL(input.files[0])
+    const reader = new FileReader() // FileReader 对象允许 Web 应用程序异步读取存储在用户计算机上的文件的内容，使用 File 或 Blob 对象指定要读取的文件或数据。
+    // FileReader 仅用于以安全的方式从用户（远程）系统读取文件内容 它不能用于从文件系统中按路径名简单地读取文件。
+    reader.readAsDataURL(input.files[0]) // 1.使用 FileReader 读取上传的文件并将其转换为 Data URL。
+    // readAsDataURL 方法会读取指定的 Blob 或 File 对象。同时 result 属性将包含一个data:URL 格式的字符串（base64 编码）以表示所读取文件的内容。
 
     reader.onload = async (e: any) => {
       try {
-        const image: any = new Image()
+        const image: any = new Image() // 创建一个新的 Image 对象，加载 Data URL。
         image.src = e.target.result
 
+        // 当图片加载完成后，利用 Canvas 对象将图片进行处理（调整尺寸、压缩等），生成新的 Blob 对象。
         image.onload = async function () {
           const canvas = document.createElement('canvas')
           const context: any = canvas.getContext('2d')
@@ -222,26 +190,31 @@ const uploadImage = () => {
           const WIDTH = 1200
           const canvasHeight = WIDTH * ratio
 
+          // 设置 canvas 的宽高
           canvas.width = WIDTH
           canvas.height = canvasHeight
 
-          context.drawImage(image, 0, 0, canvas.width, canvas.height)
-
+          // drawImage : 在Canvas上绘制图像。
+          context.drawImage(image, 0, 0, canvas.width, canvas.height) // 第二个和第三个参数是image的x轴和y轴坐标
+          
           const result: any = await new Promise((resolve, reject) => {
             canvas.toBlob(
+              // 创造 Blob 对象，用以展示 canvas 上的图片；这个图片文件可以被缓存或保存到本地。
+              // Blob 对象可以用于替代原始图片文件，从而在页面中展示或传输。
               (blob) => {
+                // 将 Canvas 上的内容转换为 Blob 对象后，可以使用生成的 Blob URL 直接在页面中展示处理后的图片，而无需再操作原始图片文件。
                 resolve(blob)
-              },
+              }, // 可以在调用时指定所需的文件格式和图像质量
               'image/jpeg',
               0.7
             )
           })
-
-          // 调用 URL.revokeObjectURL 释放通过 URL.createObjectURL 创建的 URL 对象，避免内存泄漏。
-          URL.revokeObjectURL(e.target.result)
-
-          const imgSrc = URL.createObjectURL(result)
-          backgroundImage.value = imgSrc
+          
+          URL.revokeObjectURL(e.target.result)  // 释放与最初URL（e.target.result）相关联的内存资源，而该 URL 是代表最初上传的图片的数据URL。
+          // URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的 URL。
+          // 这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的 URL 对象表示指定的 File 对象或 Blob 对象。
+          const imgSrc = URL.createObjectURL(result) // 通过 URL.createObjectURL() 创建一个代表处理后的图片 URL ，用于在页面上显示处理后的图片。
+          backgroundImage.value = imgSrc // 最后将处理后的图片 URL 存储在 backgroundImage.value 中，以便在 Vue 组件中使用。
         }
       } catch (error) {
         // Handle any errors that might occur during image processing

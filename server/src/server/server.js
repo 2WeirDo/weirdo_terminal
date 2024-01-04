@@ -3,7 +3,7 @@
  */
 import express from 'express'
 import pkg from 'body-parser';
-const { urlencoded, json } = pkg;
+const { urlencoded, json } = pkg; // 处理请求体的中间件
 import expressSession from 'express-session'
 import { createClient } from 'redis'
 import {redisConfig} from '../config/config.js'
@@ -131,10 +131,10 @@ class ExpressServer {
 
   listen(port) {
     this.server.listen(port)
-    let url = `http://localhost:${port}`
-    if (this.contextPath) {
-      url += this.contextPath
-    }
+    // let url = `http://localhost:${port}`
+    // if (this.contextPath) {
+    //   url += this.contextPath
+    // }
     // console.log(`server start at ${url}, env = ${process.env.NODE_ENV}`);
   }
 }
