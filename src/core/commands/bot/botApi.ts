@@ -13,7 +13,7 @@ export const getBotOutput = async (message: string) => {
   // bug
   // botStore.addRecord({ role: 'user', content: message })
   let { memory } = botStore
-  let res: any = await myAxios.post('/bot/get', {message, memory })
+  let res: any = await myAxios.post('/bot/get', { message, memory })
   res = res.data
   botStore.addRecord({ role: 'user', content: message })
   botStore.addRecord({ role: 'assistant', content: res })
