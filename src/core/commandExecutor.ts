@@ -47,7 +47,7 @@ export const doCommandExecute = async (
     return // 不return的话就会执行两次doAction, 还会执行父命令的action, 是没用的
   }
   // 执行命令, 调用命令的相关行为函数action (如果有子命令则只执行子命令的action)
-  await doAction(command, parsedOptions, terminal, parentCommand)
+  await doAction(command, parsedOptions, terminal, parentCommand) // 好像这里不用传父命令对象了
 }
 
 /**
@@ -107,7 +107,7 @@ const doParse = (text: string, commandOptions: CommandOptionType[]): getopts.Par
     if (alias && options.alias) {
       options.alias[key] = alias
     }
-    options[type]?.push(key)
+    options[type]?.push(key)  // 这里就有点奇怪了, 这个库居然是以 boolean 进行分类的
     if (defaultValue && options.default) {
       options.default[key] = defaultValue
     }

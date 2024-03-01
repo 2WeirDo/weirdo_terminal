@@ -15,7 +15,7 @@ const getBlob = () => {
   return new Promise((resolve) => {
     const xhr = new XMLHttpRequest()
     xhr.open('GET', ikun, true)
-    xhr.responseType = 'blob'     // ❗接收二进制文件
+    xhr.responseType = 'blob' // ❗接收二进制文件
     xhr.onload = () => {
       if (xhr.status === 200) {
         resolve(xhr.response)

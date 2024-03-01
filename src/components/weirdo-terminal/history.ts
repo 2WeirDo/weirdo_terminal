@@ -41,8 +41,8 @@ const useHistory = (commandList: CommandOutputType[], inputCommand: Ref<CommandI
   }
 
   return {
-    commandHistoryPos,
-    listCommandHistory,
+    commandHistoryPos, // 命令个数
+    listCommandHistory, // 获取所有输入过的命令
     showNextCommand,
     showPrevCommand
   }

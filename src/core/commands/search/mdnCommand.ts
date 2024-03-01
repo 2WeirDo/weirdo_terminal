@@ -3,7 +3,7 @@ import { CommandType } from '../../command'
 const mdnCommand: CommandType = {
   func: 'mdn',
   name: 'MozillaMDN',
-  alias: ['mdn', 'mozillamdn'],
+  alias: [],
   desc: 'mdn <搜索内容>',
   params: [
     {

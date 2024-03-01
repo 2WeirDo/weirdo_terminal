@@ -23,7 +23,7 @@ const onSubmitCommand = async (inputText: string) => {
     return
   }
 
-  // 拿到YuTerminal暴露出来的终端对象
+  // 拿到WeirdoTerminal暴露出来的终端对象
   const terminal = terminalRef.value.terminal
 
   // 命令解析
