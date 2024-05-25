@@ -15,7 +15,7 @@
 
 
 
-在线体验地址 : https://www.weirdo-terminal.com/ (仅支持 PC duan)
+在线体验地址 : https://www.weirdo-terminal.com/ (仅支持 PC 端)
 
 
 
