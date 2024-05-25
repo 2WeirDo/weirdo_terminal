@@ -469,14 +469,6 @@ node index.js
 
 
 
-## 特别鸣谢
 
-该项目灵感来源于
-
--  [YuIndex -- 程序员鱼皮](https://github.com/liyupi/yuindex) 
-
-README 写法参考于
-- [YuIndex](https://github.com/liyupi/yuindex)  
-- [gpt-web-terminal](https://github.com/ltyzzzxxx/gpt-web-terminal)
 
 欢迎大家 star 呀 ~~ ⭐⭐
